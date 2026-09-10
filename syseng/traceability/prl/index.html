@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>3.7.21 Enumeration of MarkedLocationType - cwz8008test</title>
+    <title>PRL - cwz8008test</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "3.7.21 Enumeration of MarkedLocationType";
-        var mkdocs_page_input_path = "syseng\\requirements\\enumerationofMarkedLocationType.md";
+        var mkdocs_page_name = "PRL";
+        var mkdocs_page_input_path = "syseng\\traceability\\prl.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -58,17 +58,17 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">3 System Requirements</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">3.7.21 Enumeration of MarkedLocationType</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../requirements/enumerationofMarkedLocationType/">3.7.21 Enumeration of MarkedLocationType</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">4 Traceability</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../traceability/prl/">PRL</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PRL</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../traceability/rtm/">RTM</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../rtm/">RTM</a>
                   </li>
               </ul>
       </div>
@@ -85,10 +85,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">3 System Requirements</li>
-      <li class="breadcrumb-item active">3.7.21 Enumeration of MarkedLocationType</li>
+          <li class="breadcrumb-item">4 Traceability</li>
+      <li class="breadcrumb-item active">PRL</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/vibangonzales/cwz8008test/edit/master/docs/syseng/requirements/enumerationofMarkedLocationType.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/vibangonzales/cwz8008test/edit/master/docs/syseng/traceability/prl.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -96,74 +96,109 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="3721-enumeration-of-markedlocationtype">3.7.21      Enumeration of MarkedLocationType</h3>
-<p>The MarkedLocationType enumerated type describes options that a MarkedLocation can indicate, such as the start or end of a work zone.</p>
-<p>The following identifies the enumerations for MarkedLocationType:</p>
-<ul>
-<li>
-<p><strong>afad.</strong> An automatic flagger assistance device.</p>
-</li>
-<li>
-<p><strong>delineator.</strong> A generic delineation point in a work zone. This value can be used for most types of marked locations that don't match any of the other values.</p>
-</li>
-<li>
-<p><strong>flagger.</strong> A human who is directing traffic.</p>
-</li>
-<li>
-<p><strong>lane-shift.</strong> A lane shift.</p>
-</li>
-<li>
-<p><strong>lane-closure.</strong> One or more lanes are closed.</p>
-</li>
-<li>
-<p><strong>personal-device.</strong> A connected device that is worn or carried by an individual worker in a work zone.</p>
-</li>
-<li>
-<p><strong>ramp-closure.</strong> The start of a closed ramp onto or off a main road or highway.</p>
-</li>
-<li>
-<p><strong>road-closure.</strong> The start of a closed road.</p>
-</li>
-<li>
-<p><strong>work-truck-with-lights-flashing.</strong> A work truck with lights flashing, actively engaged in construction or maintenance activity on the roadway.</p>
-</li>
-<li>
-<p><strong>work-zone-start.</strong> The start point of a work zone.</p>
-</li>
-<li>
-<p><strong>work-zone-end.</strong> The end point of a work zone.</p>
-</li>
-<li>
-<p><strong>attenuator-vehicle.</strong> A vehicle intended to reduce damage resulting from a collision.</p>
-</li>
-<li>
-<p><strong>construction-vehicle.</strong> A vehicle used in the process of roadway construction.</p>
-</li>
-<li>
-<p><strong>maintenance-vehicle.</strong> A vehicle used in the process of roadway maintenance.</p>
-</li>
-<li>
-<p><strong>emergency-vehicle.</strong> A vehicle used in the process of public safety on roadways.</p>
-</li>
-<li>
-<p><strong>stalled-or-disabled-vehicle.</strong> A stalled or disabled vehicle.</p>
-</li>
-<li>
-<p><strong>pavement-marking-vehicle.</strong> A vehicle used for pavement marking.</p>
-</li>
-<li>
-<p><strong>other.</strong></p>
-</li>
-</ul>
-<h2 id="traceability">Traceability</h2>
-<p>Needs: 2.5.2.11.2 Vehicle Position</p>
-<p>Design: 5.5.2.20 MarkedLocationType</p>
+                <h1 id="protocol-requirements-list">Protocol Requirements List</h1>
+<table>
+<thead>
+<tr>
+<th>Need ID</th>
+<th>Need</th>
+<th>Req ID</th>
+<th>Requirement</th>
+<th>Conformance</th>
+<th>Support</th>
+<th>Additional Specifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.5.2.11</td>
+<td>Zone Work Vehicle Device</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.5.2.11.1</td>
+<td>Vehicle Type</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3.7.21</td>
+<td>Enumeration of MarkedLocationType</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.5.2.11.2</td>
+<td><a href="../../needs/dataexchangeneeds/#252112zone-work-vehicle-device--vehicle-position">Vehicle Position</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3.7.2</td>
+<td>Contents of FieldDeviceFeature</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3.7.2 d)</td>
+<td>geometry</td>
+<td>M</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3.7.21</td>
+<td><a href="../../requirements/enumerationofMarkedLocationType/">Enumeration of MarkedLocationType</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../needs/dataexchangeneeds/" class="btn btn-neutral float-left" title="2.5.2 Data Exchange Needs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../traceability/prl/" class="btn btn-neutral float-right" title="PRL">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../requirements/enumerationofMarkedLocationType/" class="btn btn-neutral float-left" title="3.7.21 Enumeration of MarkedLocationType"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rtm/" class="btn btn-neutral float-right" title="RTM">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -190,10 +225,10 @@
         </span>
     
     
-      <span><a href="../../needs/dataexchangeneeds/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../requirements/enumerationofMarkedLocationType/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../traceability/prl/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../rtm/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
