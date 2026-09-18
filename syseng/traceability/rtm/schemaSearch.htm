@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Search and Find Next</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .controls { position: fixed; top: 0px; left: 10px; background: white; padding: 15px; border: 1px solid #ccc; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        #fileDisplay { margin-top: 100px; white-space: pre-wrap; font-family: monospace; line-height: 1.5; }
+        
+        /* Highlight styles */
+        .highlight { background-color: yellow; }
+        .highlight.active { background-color: orange; font-weight: bold; }
+        .match-count { font-size: 0.9em; color: #555; margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <!-- Fixed Controls Panel -->
+    <div class="controls">
+        <input type="text" id="fileName" /> <!-- ./schemas/1.1/DeviceFeed.json -->
+        <input type="text" id="searchInput" />
+        <button id="searchBtn">Search</button>
+        <button id="nextBtn">Find Next</button><br>
+        <span id="matchStatus" class="match-count"></span>
+    </div>
+
+    <!-- Container where the text file content will be rendered -->
+
+    <div id="fileDisplay"></div>
+
+    <script>
+        const fileName = document.getElementById('fileName');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const matchStatus = document.getElementById('matchStatus');
+        const fileDisplay = document.getElementById('fileDisplay');
+
+        // 1. Get the query string from the window's current location
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 2. Get a specific parameters by their names
+        const fileNameParam = urlParams.get('filename');
+        fileName.value = fileNameParam; 
+
+        const schemaTextParam = urlParams.get('search');
+        searchInput.value = schemaTextParam; 
+
+        let rawFileContent = "";
+        let matchElements = [];
+        let currentMatchIndex = -1;
+
+        // 3. Read the text file
+        async function loadJsonFile(fileName) {
+          try {
+            const response = await fetch(fileName);
+            if (!response.ok) throw new Error(`Status: ${response.status}`);
+    
+            const data = await response.json();
+            rawFileContent = JSON.stringify(data, null, 2);
+            //console.log(data); // Logged as an object
+            fileDisplay.textContent = rawFileContent; 
+            //console.log(rawFileContent);
+            searchSchema();
+            //resetSearchState();
+          } catch (error) {
+            console.error("Error reading JSON:", error);
+          }
+        }
+
+        console.log(fileNameParam);
+        // Load the text file
+        loadJsonFile(fileNameParam); //'./schemas/1.0/DeviceFeed.json'
+
+
+        // 4. Initial Search: Find and highlight all matches
+        function searchSchema() {
+            //resetSearchState();
+            const searchTerm = searchInput.value.trim();
+
+            if (!searchTerm || !rawFileContent) return;
+
+            const escapedTerm = searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            const regex = new RegExp(`(${escapedTerm})`, 'gi');
+
+            if (regex.test(rawFileContent)) {
+                // Wrap every single match in a span tag
+                fileDisplay.innerHTML = rawFileContent.replace(regex, '<span class="highlight">$1</span>');
+                
+                // Collect all the newly created spans into an array
+                matchElements = Array.from(fileDisplay.querySelectorAll('.highlight'));
+                
+                if (matchElements.length > 0) {
+                    console.log("Got Here");
+                    currentMatchIndex = 0;
+                    //nextBtn.disabled = false;
+                    updateMatchUI();
+                }
+            } else {
+                matchStatus.textContent = "0 matches found";
+                fileDisplay.textContent = rawFileContent; 
+            }
+        }
+
+        // 5. Search Button
+        searchBtn.addEventListener('click', () => {
+            searchSchema()
+        });
+
+        // 6. Find Next: Loop through matches and scroll
+        nextBtn.addEventListener('click', () => {
+            if (matchElements.length === 0) return;
+
+            // Remove active status from the current element
+            matchElements[currentMatchIndex].classList.remove('active');
+
+            // Move index forward (loops back to 0 if at the end)
+            currentMatchIndex = (currentMatchIndex + 1) % matchElements.length;
+
+            updateMatchUI();
+        });
+
+        // 7. Helper to manage UI updates and scrolling
+        function updateMatchUI() {
+            const activeElement = matchElements[currentMatchIndex];
+            
+            // Highlight the active match in orange
+            activeElement.classList.add('active');
+            
+            // Update counter text (e.g., "2 of 15")
+            matchStatus.textContent = `${currentMatchIndex + 1} of ${matchElements.length}`;
+            console.log(matchElements.length)
+            
+            // Scroll directly to the active span
+            activeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // 8. Helper to clear states on a new search or new file
+        function resetSearchState() {
+            matchElements = [];
+            currentMatchIndex = -1;
+            //nextBtn.disabled = true;
+            matchStatus.textContent = "";
+        }
+
+    </script>
+
+</body>
+</html>
