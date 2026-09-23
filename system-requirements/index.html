@@ -1,0 +1,3012 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Connected Work Zones Implementation Guide and Standard" name="description"/>
+<link href="https://MInsignares.github.io/cwz-test/system-requirements/" rel="canonical"/>
+<link href="../concept-of-operations/" rel="prev"/>
+<link href="../dialogs/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>3 System Requirements - cwz-test</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20144c0%2097.2-86%20176-192%20176-26.7%200-52.1-5-75.2-14l-81.6%2043.2c-9.3%204.9-20.7%203.2-28.2-4.2s-9.2-18.9-4.2-28.2l35.6-67.2C14.3%20220.2%200%20183.6%200%20144%200%2046.8%2086-32%20192-32s192%2078.8%20192%20176m0%20368c-94.1%200-172.4-62.1-188.8-144%20120-1.5%20224.3-86.9%20235.8-202.7%2083.3%2019.2%20145%2088.3%20145%20170.7%200%2039.6-14.3%2076.2-38.4%20105.6l35.6%2067.2c4.9%209.3%203.2%2020.7-4.2%2028.2s-18.9%209.2-28.2%204.2L459.2%20498c-23.1%209-48.5%2014-75.2%2014%22/%3E%3C/svg%3E');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/pdf.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="..\pdf\document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#3-system-requirements-normative">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<!--  <p class="status-badge proposal">Proposal: This is a newly proposed project that does not yet reflect broad community input</p>
+-->
+<p class="status-badge draft">Draft: This is a draft document that is subject to significant changes at any time</p>
+<!--  <p class="status-badge preliminary">Preliminary: This is a preliminary document and may experience changes prior to finalization</p> -->
+<!--  <p class="status-badge recommended">Recommended: This document has been recommended for balloting but is not yet approved</p> -->
+<!--  <p class="status-badge ifr">IFR: This is an approved Interim for Field Release (IFR) document</p> -->
+<!--  <p class="status-badge approved">Recommended: This is an approved formal standard</p> -->
+</div>
+</aside>
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
+              
+You're not viewing the latest version.
+<a href="../..">
+<strong>Click here to go to latest.</strong>
+</a>
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="cwz-test" class="md-header__button md-logo" data-md-component="logo" href=".." title="cwz-test">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            cwz-test
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              3 System Requirements
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/MInsignares/cwz-test" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<a class="md-header-nav__button md-icon" href="..\pdf\document.pdf" title="PDF">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,0c-17.6,0-32,14.4-32,32v448c0,17.6,14.4,32,32,32h320c17.6,0,32-14.4,32-32V128L352,0H128z" fill="#E2E5E7"></path>
+<path d="m384 128h96l-128-128v96c0 17.6 14.4 32 32 32z" fill="#B0B7BD"></path>
+<polygon fill="#CAD1D8" points="480 224 384 128 480 128"></polygon>
+<path d="M416,416c0,8.8-7.2,16-16,16H48c-8.8,0-16-7.2-16-16V256c0-8.8,7.2-16,16-16h352c8.8,0,16,7.2,16,16  V416z" fill="#F15642"></path>
+<g fill="#fff">
+<path d="m101.74 303.15c0-4.224 3.328-8.832 8.688-8.832h29.552c16.64 0 31.616 11.136 31.616 32.48 0 20.224-14.976 31.488-31.616 31.488h-21.36v16.896c0 5.632-3.584 8.816-8.192 8.816-4.224 0-8.688-3.184-8.688-8.816v-72.032zm16.88 7.28v31.872h21.36c8.576 0 15.36-7.568 15.36-15.504 0-8.944-6.784-16.368-15.36-16.368h-21.36z"></path>
+<path d="m196.66 384c-4.224 0-8.832-2.304-8.832-7.92v-72.672c0-4.592 4.608-7.936 8.832-7.936h29.296c58.464 0 57.184 88.528 1.152 88.528h-30.448zm8.064-72.912v57.312h21.232c34.544 0 36.08-57.312 0-57.312h-21.232z"></path>
+<path d="m303.87 312.11v20.336h32.624c4.608 0 9.216 4.608 9.216 9.072 0 4.224-4.608 7.68-9.216 7.68h-32.624v26.864c0 4.48-3.184 7.92-7.664 7.92-5.632 0-9.072-3.44-9.072-7.92v-72.672c0-4.592 3.456-7.936 9.072-7.936h44.912c5.632 0 8.96 3.344 8.96 7.936 0 4.096-3.328 8.704-8.96 8.704h-37.248v0.016z"></path>
+</g>
+<path d="m400 432h-304v16h304c8.8 0 16-7.2 16-16v-16c0 8.8-7.2 16-16 16z" fill="#CAD1D8"></path>
+</svg>
+</a></nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine classes -->
+<!-- Navigation -->
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<!-- Site title -->
+<label class="md-nav__title" for="__drawer">
+<a aria-label="cwz-test" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Contents">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Contents
+  </label>
+<!-- Repository information -->
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/MInsignares/cwz-test" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<!-- Navigation list -->
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Front Matter
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Front Matter
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Title Page
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../notices/">
+<span class="md-ellipsis">
+    
+  
+    Notices
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../acknowledgements/">
+<span class="md-ellipsis">
+    
+  
+    Acknowledgements
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../foreword/">
+<span class="md-ellipsis">
+    
+  
+    Foreword
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../executive-summary/">
+<span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../general-information/">
+<span class="md-ellipsis">
+    
+  
+    1 General Information
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../concept-of-operations/">
+<span class="md-ellipsis">
+    
+  
+    2 Concept of Operations
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    3 System Requirements
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    3 System Requirements
+  
+
+    
+  </span>
+</a>
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+<!-- Table of contents -->
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+<!-- Table of contents title and list -->
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      3 System Requirements
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-introduction-informative">
+<span class="md-ellipsis">
+      
+        3.1 Introduction [Informative]
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-architectural-requirements">
+<span class="md-ellipsis">
+      
+        3.2 Architectural Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.2 Architectural Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#321-compatibility-with-the-wzdx-specification">
+<span class="md-ellipsis">
+      
+        3.2.1 Compatibility with the WZDx Specification
+      
+    </span>
+</a>
+<nav aria-label="3.2.1 Compatibility with the WZDx Specification" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3211-exceptions">
+<span class="md-ellipsis">
+      
+        3.2.1.1 Exceptions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3212-requirement">
+<span class="md-ellipsis">
+      
+        3.2.1.2 Requirement
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#322-geojson-data-format">
+<span class="md-ellipsis">
+      
+        3.2.2 GeoJSON Data Format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#323-geojson-data-validation">
+<span class="md-ellipsis">
+      
+        3.2.3 GeoJSON Data Validation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#324-business-rules">
+<span class="md-ellipsis">
+      
+        3.2.4 Business Rules
+      
+    </span>
+</a>
+<nav aria-label="3.2.4 Business Rules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3241-event-segments-follow-attribute-changes">
+<span class="md-ellipsis">
+      
+        3.2.4.1 Event Segments Follow Attribute Changes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3242-workzoneroadevent-lanes">
+<span class="md-ellipsis">
+      
+        3.2.4.2 WorkZoneRoadEvent Lanes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3243-lane-order">
+<span class="md-ellipsis">
+      
+        3.2.4.3 Lane Order
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3244-data-source-id-referential-integrity">
+<span class="md-ellipsis">
+      
+        3.2.4.4 Data Source ID Referential Integrity
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3245-utc-date-time-format-specification">
+<span class="md-ellipsis">
+      
+        3.2.4.5 UTC Date-Time Format Specification
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3246-uuid-format-specification">
+<span class="md-ellipsis">
+      
+        3.2.4.6 UUID Format Specification
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-data-exchange-requirements">
+<span class="md-ellipsis">
+      
+        3.3 Data Exchange Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.3 Data Exchange Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#331-exchange-workzonefeed-information">
+<span class="md-ellipsis">
+      
+        3.3.1 Exchange WorkZoneFeed Information
+      
+    </span>
+</a>
+<nav aria-label="3.3.1 Exchange WorkZoneFeed Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3311-send-workzonefeed-upon-request">
+<span class="md-ellipsis">
+      
+        3.3.1.1 Send WorkZoneFeed Upon Request
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#332-exchange-devicefeed-information">
+<span class="md-ellipsis">
+      
+        3.3.2 Exchange DeviceFeed Information
+      
+    </span>
+</a>
+<nav aria-label="3.3.2 Exchange DeviceFeed Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3321-send-devicefeed-upon-request">
+<span class="md-ellipsis">
+      
+        3.3.2.1 Send DeviceFeed Upon Request
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-workzonefeed-requirements">
+<span class="md-ellipsis">
+      
+        3.4 WorkZoneFeed Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.4 WorkZoneFeed Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#341-contents-of-workzonefeed">
+<span class="md-ellipsis">
+      
+        3.4.1 Contents of WorkZoneFeed
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#35-feedinfo-requirements">
+<span class="md-ellipsis">
+      
+        3.5 FeedInfo Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.5 FeedInfo Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#351-contents-of-feedinfo">
+<span class="md-ellipsis">
+      
+        3.5.1 Contents of FeedInfo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#352-contents-of-feeddatasource">
+<span class="md-ellipsis">
+      
+        3.5.2 Contents of FeedDataSource
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#36-roadeventfeature-requirements">
+<span class="md-ellipsis">
+      
+        3.6 RoadEventFeature Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.6 RoadEventFeature Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#361-contents-of-roadeventfeature">
+<span class="md-ellipsis">
+      
+        3.6.1 Contents of RoadEventFeature
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#362-contents-of-workzoneroadevent">
+<span class="md-ellipsis">
+      
+        3.6.2 Contents of WorkZoneRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#363-contents-of-detourroadevent">
+<span class="md-ellipsis">
+      
+        3.6.3 Contents of DetourRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#364-contents-of-roadeventcoredetails">
+<span class="md-ellipsis">
+      
+        3.6.4 Contents of RoadEventCoreDetails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#365-enumeration-of-locationmethod">
+<span class="md-ellipsis">
+      
+        3.6.5 Enumeration of LocationMethod
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#366-contents-of-relatedroadevent">
+<span class="md-ellipsis">
+      
+        3.6.6 Contents of RelatedRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#367-contents-of-typeofwork">
+<span class="md-ellipsis">
+      
+        3.6.7 Contents of TypeOfWork
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#368-contents-of-lane">
+<span class="md-ellipsis">
+      
+        3.6.8 Contents of Lane
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#369-contents-of-restriction">
+<span class="md-ellipsis">
+      
+        3.6.9 Contents of Restriction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3610-contents-of-cdscurbzonesreference">
+<span class="md-ellipsis">
+      
+        3.6.10 Contents of CdsCurbZonesReference
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3611-contents-of-workerpresence">
+<span class="md-ellipsis">
+      
+        3.6.11 Contents of WorkerPresence
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3612-enumeration-of-eventtype">
+<span class="md-ellipsis">
+      
+        3.6.12 Enumeration of EventType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3613-enumeration-of-workzonetype">
+<span class="md-ellipsis">
+      
+        3.6.13 Enumeration of WorkZoneType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3614-enumeration-of-vehicleimpact">
+<span class="md-ellipsis">
+      
+        3.6.14 Enumeration of VehicleImpact
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3615-enumeration-of-restrictiontype">
+<span class="md-ellipsis">
+      
+        3.6.15 Enumeration of RestrictionType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3616-enumeration-of-worktypename">
+<span class="md-ellipsis">
+      
+        3.6.16 Enumeration of WorkTypeName
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3617-enumeration-of-lanestatus">
+<span class="md-ellipsis">
+      
+        3.6.17 Enumeration of LaneStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3618-enumeration-of-lanetype">
+<span class="md-ellipsis">
+      
+        3.6.18 Enumeration of LaneType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3619-enumeration-of-unitofmeasurement">
+<span class="md-ellipsis">
+      
+        3.6.19 Enumeration of UnitOfMeasurement
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3620-enumeration-of-workerpresencemethod">
+<span class="md-ellipsis">
+      
+        3.6.20 Enumeration of WorkerPresenceMethod
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3621-enumeration-of-workerpresencedefinition">
+<span class="md-ellipsis">
+      
+        3.6.21 Enumeration of WorkerPresenceDefinition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3622-enumeration-of-workerpresenceconfidence">
+<span class="md-ellipsis">
+      
+        3.6.22 Enumeration of WorkerPresenceConfidence
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3623-enumeration-of-relatedroadeventtype">
+<span class="md-ellipsis">
+      
+        3.6.23 Enumeration of RelatedRoadEventType
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#37-devicefeed-requirements">
+<span class="md-ellipsis">
+      
+        3.7 DeviceFeed Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.7 DeviceFeed Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#371-contents-of-devicefeed">
+<span class="md-ellipsis">
+      
+        3.7.1 Contents of DeviceFeed
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#372-contents-of-fielddevicefeature">
+<span class="md-ellipsis">
+      
+        3.7.2 Contents of FieldDeviceFeature
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#373-contents-of-fielddevicecoredetails">
+<span class="md-ellipsis">
+      
+        3.7.3 Contents of FieldDeviceCoreDetails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#374-contents-of-arrowboard">
+<span class="md-ellipsis">
+      
+        3.7.4 Contents of ArrowBoard
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#375-contents-of-camera">
+<span class="md-ellipsis">
+      
+        3.7.5 Contents of Camera
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#376-contents-of-dynamicmessagesign">
+<span class="md-ellipsis">
+      
+        3.7.6 Contents of DynamicMessageSign
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#377-contents-of-flashingbeacon">
+<span class="md-ellipsis">
+      
+        3.7.7 Contents of FlashingBeacon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#378-contents-of-hybridsign">
+<span class="md-ellipsis">
+      
+        3.7.8 Contents of HybridSign
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#379-contents-of-locationmarker">
+<span class="md-ellipsis">
+      
+        3.7.9 Contents of LocationMarker
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3710-contents-of-markedlocation">
+<span class="md-ellipsis">
+      
+        3.7.10 Contents of MarkedLocation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3711-contents-of-trafficsensor">
+<span class="md-ellipsis">
+      
+        3.7.11 Contents of TrafficSensor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3712-contents-of-trafficsensorlanedata">
+<span class="md-ellipsis">
+      
+        3.7.12 Contents of TrafficSensorLaneData
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3713-contents-of-trafficsignal">
+<span class="md-ellipsis">
+      
+        3.7.13 Contents of TrafficSignal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3714-contents-of-roadsideunit">
+<span class="md-ellipsis">
+      
+        3.7.14 Contents of RoadsideUnit
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3715-enumeration-of-unitofmeasurement">
+<span class="md-ellipsis">
+      
+        3.7.15 Enumeration of UnitOfMeasurement
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3716-enumeration-of-arrowboardpattern">
+<span class="md-ellipsis">
+      
+        3.7.16 Enumeration of ArrowBoardPattern
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3717-enumeration-of-fielddevicetype">
+<span class="md-ellipsis">
+      
+        3.7.17 Enumeration of FieldDeviceType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3718-enumeration-of-fielddevicestatus">
+<span class="md-ellipsis">
+      
+        3.7.18 Enumeration of FieldDeviceStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3719-enumeration-of-flashingbeaconfunction">
+<span class="md-ellipsis">
+      
+        3.7.19 Enumeration of FlashingBeaconFunction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3720-enumeration-of-hybridsigndynamicmessagefunction">
+<span class="md-ellipsis">
+      
+        3.7.20 Enumeration of HybridSignDynamicMessageFunction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3721-enumeration-of-markedlocationtype">
+<span class="md-ellipsis">
+      
+        3.7.21 Enumeration of MarkedLocationType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3722-enumeration-of-trafficsignalmode">
+<span class="md-ellipsis">
+      
+        3.7.22 Enumeration of TrafficSignalMode
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3723-enumeration-of-roadsideunitmessagetypes">
+<span class="md-ellipsis">
+      
+        3.7.23 Enumeration of RoadsideUnitMessageTypes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#38-direction-requirements">
+<span class="md-ellipsis">
+      
+        3.8 Direction Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.8 Direction Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#381-enumeration-of-direction">
+<span class="md-ellipsis">
+      
+        3.8.1 Enumeration of Direction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#382-reserved-for-future-requirements">
+<span class="md-ellipsis">
+      
+        3.8.2 Reserved for Future Requirements
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#39-boundingbox-requirements">
+<span class="md-ellipsis">
+      
+        3.9 BoundingBox Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.9 BoundingBox Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#391-contents-of-boundingbox">
+<span class="md-ellipsis">
+      
+        3.9.1 Contents of BoundingBox
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#392-reserved-for-future-requirements">
+<span class="md-ellipsis">
+      
+        3.9.2 Reserved for Future Requirements
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#310-instructions-for-using-the-protocol-requirements-list-prl">
+<span class="md-ellipsis">
+      
+        3.10 Instructions for Using the Protocol Requirements List (PRL)
+      
+    </span>
+</a>
+<nav aria-label="3.10 Instructions for Using the Protocol Requirements List (PRL)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3101-notation-informative">
+<span class="md-ellipsis">
+      
+        3.10.1 Notation [Informative]
+      
+    </span>
+</a>
+<nav aria-label="3.10.1 Notation [Informative]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31011-conformance-symbols">
+<span class="md-ellipsis">
+      
+        3.10.1.1 Conformance Symbols
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31012-conditional-status-notation">
+<span class="md-ellipsis">
+      
+        3.10.1.2 Conditional Status Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31013-support-column-symbols">
+<span class="md-ellipsis">
+      
+        3.10.1.3 Support Column Symbols
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3102-instructions-for-completing-the-prl-informative">
+<span class="md-ellipsis">
+      
+        3.10.2 Instructions for Completing the PRL [Informative]
+      
+    </span>
+</a>
+<nav aria-label="3.10.2 Instructions for Completing the PRL [Informative]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31021-conformance-definition">
+<span class="md-ellipsis">
+      
+        3.10.2.1 Conformance Definition
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dialogs/">
+<span class="md-ellipsis">
+    
+  
+    4 System Interface Design Details Dialogs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-concepts/">
+<span class="md-ellipsis">
+    
+  
+    5 System Interface Design Details Data Concepts
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../guidance-needs/">
+<span class="md-ellipsis">
+    
+  
+    6 Guidance Needs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../protocol-requirements-list/">
+<span class="md-ellipsis">
+    
+  
+    A Protocol Requirements List
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../requirements-traceability-matrix/">
+<span class="md-ellipsis">
+    
+  
+    B Requirements Traceability Matrix
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../annex-c-guidance-connected-vehicle-environment/">
+<span class="md-ellipsis">
+    
+  
+    C Guidance for Deployments Involving Connected Vehicle Environment Work Zone-related Standards
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../annex-d-recommendations-to-sdos/">
+<span class="md-ellipsis">
+    
+  
+    D Recommendations to SDOs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../annex-e-user-requests/">
+<span class="md-ellipsis">
+    
+  
+    E User Requests
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../annex-f-differences-wzdx4-2-cwz1-0/">
+<span class="md-ellipsis">
+    
+  
+    F Listing of Differences between the CWZ Standard and the WZDX v4.2 Specification JSON Schemas
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine title -->
+<!-- Table of contents -->
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+<!-- Table of contents title and list -->
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      3 System Requirements
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-introduction-informative">
+<span class="md-ellipsis">
+      
+        3.1 Introduction [Informative]
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-architectural-requirements">
+<span class="md-ellipsis">
+      
+        3.2 Architectural Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.2 Architectural Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#321-compatibility-with-the-wzdx-specification">
+<span class="md-ellipsis">
+      
+        3.2.1 Compatibility with the WZDx Specification
+      
+    </span>
+</a>
+<nav aria-label="3.2.1 Compatibility with the WZDx Specification" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3211-exceptions">
+<span class="md-ellipsis">
+      
+        3.2.1.1 Exceptions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3212-requirement">
+<span class="md-ellipsis">
+      
+        3.2.1.2 Requirement
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#322-geojson-data-format">
+<span class="md-ellipsis">
+      
+        3.2.2 GeoJSON Data Format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#323-geojson-data-validation">
+<span class="md-ellipsis">
+      
+        3.2.3 GeoJSON Data Validation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#324-business-rules">
+<span class="md-ellipsis">
+      
+        3.2.4 Business Rules
+      
+    </span>
+</a>
+<nav aria-label="3.2.4 Business Rules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3241-event-segments-follow-attribute-changes">
+<span class="md-ellipsis">
+      
+        3.2.4.1 Event Segments Follow Attribute Changes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3242-workzoneroadevent-lanes">
+<span class="md-ellipsis">
+      
+        3.2.4.2 WorkZoneRoadEvent Lanes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3243-lane-order">
+<span class="md-ellipsis">
+      
+        3.2.4.3 Lane Order
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3244-data-source-id-referential-integrity">
+<span class="md-ellipsis">
+      
+        3.2.4.4 Data Source ID Referential Integrity
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3245-utc-date-time-format-specification">
+<span class="md-ellipsis">
+      
+        3.2.4.5 UTC Date-Time Format Specification
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3246-uuid-format-specification">
+<span class="md-ellipsis">
+      
+        3.2.4.6 UUID Format Specification
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-data-exchange-requirements">
+<span class="md-ellipsis">
+      
+        3.3 Data Exchange Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.3 Data Exchange Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#331-exchange-workzonefeed-information">
+<span class="md-ellipsis">
+      
+        3.3.1 Exchange WorkZoneFeed Information
+      
+    </span>
+</a>
+<nav aria-label="3.3.1 Exchange WorkZoneFeed Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3311-send-workzonefeed-upon-request">
+<span class="md-ellipsis">
+      
+        3.3.1.1 Send WorkZoneFeed Upon Request
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#332-exchange-devicefeed-information">
+<span class="md-ellipsis">
+      
+        3.3.2 Exchange DeviceFeed Information
+      
+    </span>
+</a>
+<nav aria-label="3.3.2 Exchange DeviceFeed Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3321-send-devicefeed-upon-request">
+<span class="md-ellipsis">
+      
+        3.3.2.1 Send DeviceFeed Upon Request
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-workzonefeed-requirements">
+<span class="md-ellipsis">
+      
+        3.4 WorkZoneFeed Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.4 WorkZoneFeed Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#341-contents-of-workzonefeed">
+<span class="md-ellipsis">
+      
+        3.4.1 Contents of WorkZoneFeed
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#35-feedinfo-requirements">
+<span class="md-ellipsis">
+      
+        3.5 FeedInfo Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.5 FeedInfo Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#351-contents-of-feedinfo">
+<span class="md-ellipsis">
+      
+        3.5.1 Contents of FeedInfo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#352-contents-of-feeddatasource">
+<span class="md-ellipsis">
+      
+        3.5.2 Contents of FeedDataSource
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#36-roadeventfeature-requirements">
+<span class="md-ellipsis">
+      
+        3.6 RoadEventFeature Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.6 RoadEventFeature Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#361-contents-of-roadeventfeature">
+<span class="md-ellipsis">
+      
+        3.6.1 Contents of RoadEventFeature
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#362-contents-of-workzoneroadevent">
+<span class="md-ellipsis">
+      
+        3.6.2 Contents of WorkZoneRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#363-contents-of-detourroadevent">
+<span class="md-ellipsis">
+      
+        3.6.3 Contents of DetourRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#364-contents-of-roadeventcoredetails">
+<span class="md-ellipsis">
+      
+        3.6.4 Contents of RoadEventCoreDetails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#365-enumeration-of-locationmethod">
+<span class="md-ellipsis">
+      
+        3.6.5 Enumeration of LocationMethod
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#366-contents-of-relatedroadevent">
+<span class="md-ellipsis">
+      
+        3.6.6 Contents of RelatedRoadEvent
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#367-contents-of-typeofwork">
+<span class="md-ellipsis">
+      
+        3.6.7 Contents of TypeOfWork
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#368-contents-of-lane">
+<span class="md-ellipsis">
+      
+        3.6.8 Contents of Lane
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#369-contents-of-restriction">
+<span class="md-ellipsis">
+      
+        3.6.9 Contents of Restriction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3610-contents-of-cdscurbzonesreference">
+<span class="md-ellipsis">
+      
+        3.6.10 Contents of CdsCurbZonesReference
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3611-contents-of-workerpresence">
+<span class="md-ellipsis">
+      
+        3.6.11 Contents of WorkerPresence
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3612-enumeration-of-eventtype">
+<span class="md-ellipsis">
+      
+        3.6.12 Enumeration of EventType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3613-enumeration-of-workzonetype">
+<span class="md-ellipsis">
+      
+        3.6.13 Enumeration of WorkZoneType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3614-enumeration-of-vehicleimpact">
+<span class="md-ellipsis">
+      
+        3.6.14 Enumeration of VehicleImpact
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3615-enumeration-of-restrictiontype">
+<span class="md-ellipsis">
+      
+        3.6.15 Enumeration of RestrictionType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3616-enumeration-of-worktypename">
+<span class="md-ellipsis">
+      
+        3.6.16 Enumeration of WorkTypeName
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3617-enumeration-of-lanestatus">
+<span class="md-ellipsis">
+      
+        3.6.17 Enumeration of LaneStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3618-enumeration-of-lanetype">
+<span class="md-ellipsis">
+      
+        3.6.18 Enumeration of LaneType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3619-enumeration-of-unitofmeasurement">
+<span class="md-ellipsis">
+      
+        3.6.19 Enumeration of UnitOfMeasurement
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3620-enumeration-of-workerpresencemethod">
+<span class="md-ellipsis">
+      
+        3.6.20 Enumeration of WorkerPresenceMethod
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3621-enumeration-of-workerpresencedefinition">
+<span class="md-ellipsis">
+      
+        3.6.21 Enumeration of WorkerPresenceDefinition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3622-enumeration-of-workerpresenceconfidence">
+<span class="md-ellipsis">
+      
+        3.6.22 Enumeration of WorkerPresenceConfidence
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3623-enumeration-of-relatedroadeventtype">
+<span class="md-ellipsis">
+      
+        3.6.23 Enumeration of RelatedRoadEventType
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#37-devicefeed-requirements">
+<span class="md-ellipsis">
+      
+        3.7 DeviceFeed Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.7 DeviceFeed Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#371-contents-of-devicefeed">
+<span class="md-ellipsis">
+      
+        3.7.1 Contents of DeviceFeed
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#372-contents-of-fielddevicefeature">
+<span class="md-ellipsis">
+      
+        3.7.2 Contents of FieldDeviceFeature
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#373-contents-of-fielddevicecoredetails">
+<span class="md-ellipsis">
+      
+        3.7.3 Contents of FieldDeviceCoreDetails
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#374-contents-of-arrowboard">
+<span class="md-ellipsis">
+      
+        3.7.4 Contents of ArrowBoard
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#375-contents-of-camera">
+<span class="md-ellipsis">
+      
+        3.7.5 Contents of Camera
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#376-contents-of-dynamicmessagesign">
+<span class="md-ellipsis">
+      
+        3.7.6 Contents of DynamicMessageSign
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#377-contents-of-flashingbeacon">
+<span class="md-ellipsis">
+      
+        3.7.7 Contents of FlashingBeacon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#378-contents-of-hybridsign">
+<span class="md-ellipsis">
+      
+        3.7.8 Contents of HybridSign
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#379-contents-of-locationmarker">
+<span class="md-ellipsis">
+      
+        3.7.9 Contents of LocationMarker
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3710-contents-of-markedlocation">
+<span class="md-ellipsis">
+      
+        3.7.10 Contents of MarkedLocation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3711-contents-of-trafficsensor">
+<span class="md-ellipsis">
+      
+        3.7.11 Contents of TrafficSensor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3712-contents-of-trafficsensorlanedata">
+<span class="md-ellipsis">
+      
+        3.7.12 Contents of TrafficSensorLaneData
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3713-contents-of-trafficsignal">
+<span class="md-ellipsis">
+      
+        3.7.13 Contents of TrafficSignal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3714-contents-of-roadsideunit">
+<span class="md-ellipsis">
+      
+        3.7.14 Contents of RoadsideUnit
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3715-enumeration-of-unitofmeasurement">
+<span class="md-ellipsis">
+      
+        3.7.15 Enumeration of UnitOfMeasurement
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3716-enumeration-of-arrowboardpattern">
+<span class="md-ellipsis">
+      
+        3.7.16 Enumeration of ArrowBoardPattern
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3717-enumeration-of-fielddevicetype">
+<span class="md-ellipsis">
+      
+        3.7.17 Enumeration of FieldDeviceType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3718-enumeration-of-fielddevicestatus">
+<span class="md-ellipsis">
+      
+        3.7.18 Enumeration of FieldDeviceStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3719-enumeration-of-flashingbeaconfunction">
+<span class="md-ellipsis">
+      
+        3.7.19 Enumeration of FlashingBeaconFunction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3720-enumeration-of-hybridsigndynamicmessagefunction">
+<span class="md-ellipsis">
+      
+        3.7.20 Enumeration of HybridSignDynamicMessageFunction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3721-enumeration-of-markedlocationtype">
+<span class="md-ellipsis">
+      
+        3.7.21 Enumeration of MarkedLocationType
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3722-enumeration-of-trafficsignalmode">
+<span class="md-ellipsis">
+      
+        3.7.22 Enumeration of TrafficSignalMode
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3723-enumeration-of-roadsideunitmessagetypes">
+<span class="md-ellipsis">
+      
+        3.7.23 Enumeration of RoadsideUnitMessageTypes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#38-direction-requirements">
+<span class="md-ellipsis">
+      
+        3.8 Direction Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.8 Direction Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#381-enumeration-of-direction">
+<span class="md-ellipsis">
+      
+        3.8.1 Enumeration of Direction
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#382-reserved-for-future-requirements">
+<span class="md-ellipsis">
+      
+        3.8.2 Reserved for Future Requirements
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#39-boundingbox-requirements">
+<span class="md-ellipsis">
+      
+        3.9 BoundingBox Requirements
+      
+    </span>
+</a>
+<nav aria-label="3.9 BoundingBox Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#391-contents-of-boundingbox">
+<span class="md-ellipsis">
+      
+        3.9.1 Contents of BoundingBox
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#392-reserved-for-future-requirements">
+<span class="md-ellipsis">
+      
+        3.9.2 Reserved for Future Requirements
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#310-instructions-for-using-the-protocol-requirements-list-prl">
+<span class="md-ellipsis">
+      
+        3.10 Instructions for Using the Protocol Requirements List (PRL)
+      
+    </span>
+</a>
+<nav aria-label="3.10 Instructions for Using the Protocol Requirements List (PRL)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3101-notation-informative">
+<span class="md-ellipsis">
+      
+        3.10.1 Notation [Informative]
+      
+    </span>
+</a>
+<nav aria-label="3.10.1 Notation [Informative]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31011-conformance-symbols">
+<span class="md-ellipsis">
+      
+        3.10.1.1 Conformance Symbols
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31012-conditional-status-notation">
+<span class="md-ellipsis">
+      
+        3.10.1.2 Conditional Status Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31013-support-column-symbols">
+<span class="md-ellipsis">
+      
+        3.10.1.3 Support Column Symbols
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3102-instructions-for-completing-the-prl-informative">
+<span class="md-ellipsis">
+      
+        3.10.2 Instructions for Completing the PRL [Informative]
+      
+    </span>
+</a>
+<nav aria-label="3.10.2 Instructions for Completing the PRL [Informative]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31021-conformance-definition">
+<span class="md-ellipsis">
+      
+        3.10.2.1 Conformance Definition
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="3-system-requirements-normative">3 System Requirements [Normative]<a class="headerlink" href="#3-system-requirements-normative" title="Permanent link">¶</a></h1>
+<h2 id="31-introduction-informative">3.1 Introduction [Informative]<a class="headerlink" href="#31-introduction-informative" title="Permanent link">¶</a></h2>
+<p>The requirements for the CWZ Standard and Implementation Guide follow.</p>
+<h2 id="32-architectural-requirements">3.2 Architectural Requirements<a class="headerlink" href="#32-architectural-requirements" title="Permanent link">¶</a></h2>
+<p>The architectural requirements for the CWZ Standard and Implementation Guide follow.</p>
+<h3 id="321-compatibility-with-the-wzdx-specification">3.2.1 Compatibility with the WZDx Specification<a class="headerlink" href="#321-compatibility-with-the-wzdx-specification" title="Permanent link">¶</a></h3>
+<p>The CWZ WG believes that the approach described here supports the objective to preserve the investment of deployers in prior versions of WZDx, minimizing the burden of updating legacy deployments to this standard. The general approach below states that where applicable, a WZDx specification design element shall be reused, rather than developing new data requirements and design elements.</p>
+<h4 id="3211-exceptions">3.2.1.1 Exceptions<a class="headerlink" href="#3211-exceptions" title="Permanent link">¶</a></h4>
+<p>During development of this standard, the CWZ WG asserted that full backward compatibility was not required, and that the following exceptions superseded the need for full backward compatibility with the WZDx v4.2 specification:</p>
+<ol>
+<li>Elements described as DEPRECATED have been removed in this standard.</li>
+<li>Some elements described as OPTIONAL have been made MANDATORY in this standard.</li>
+<li>Some elements were renamed to generalize unit choices, for example the choice of miles or kilometers for reference post. Metric units were left as-is.</li>
+<li>Certain enumerations elements were renamed for clarity in this standard.</li>
+</ol>
+<h4 id="3212-requirement">3.2.1.2 Requirement<a class="headerlink" href="#3212-requirement" title="Permanent link">¶</a></h4>
+<p>Where applicable, data requirements described in this standard shall be reused, based on WZDx 4.2 specification to maintain compatibility with the WZDx specification and numerous current deployments, with exceptions as defined in Section 3.2.1.1.</p>
+<h3 id="322-geojson-data-format">3.2.2 GeoJSON Data Format<a class="headerlink" href="#322-geojson-data-format" title="Permanent link">¶</a></h3>
+<p>Work zone information shall be provided in the GeoJSON data format.</p>
+<h3 id="323-geojson-data-validation">3.2.3 GeoJSON Data Validation<a class="headerlink" href="#323-geojson-data-validation" title="Permanent link">¶</a></h3>
+<p>Work zone information in the GeoJSON data format shall be validated (verified) using the JSON Schema contained in this standard.</p>
+<h3 id="324-business-rules">3.2.4 Business Rules<a class="headerlink" href="#324-business-rules" title="Permanent link">¶</a></h3>
+<p>The following business rules help ensure standardized and interpretable use of the requirements in this standard. While this standard describes the required structure and data fields, business rules are additional requirements that promote consistent national level. Note that business rules are distinct from best practices in that the latter are suggestions and business rules are requirements that cannot be validated by the JSON schema.</p>
+<h4 id="3241-event-segments-follow-attribute-changes">3.2.4.1 Event Segments Follow Attribute Changes<a class="headerlink" href="#3241-event-segments-follow-attribute-changes" title="Permanent link">¶</a></h4>
+<p>A work zone or detour must be segmented into separate WorkZoneRoadEvents or DetourRoadEvents if certain characteristics vary <strong>within the overall location and/or time frame of the work zone or detour</strong>. This rule exclusively applies to characteristics represented by the properties: road_name, direction, start_date, end_date**,** vehicle_impact, lanes, and worker_presence**.**</p>
+<p>The following guidelines are provided:</p>
+<ul>
+<li>A road event should identify any related WorkZoneRoadEvents and DetourRoadEvents using the related_road_events and project_id properties on the RoadEventCoreDetails object.</li>
+<li>A series of sequential or recurring road events comprising a complex work zone or detour should use the first- and next-in-sequence or first- and next-occurrence enumerations of the RelatedRoadEventType. A work zone or detour represented by multiple road events should also use the project_id property to identify the project that the events correspond to.</li>
+<li>A WorkZoneRoadEvent should identify any prescribed detour using the related-detour enumeration; a DetourRoadEvent should identify the work zone necessitating the detour using the related-work-zone enumeration; both may refer to the same project identifier as other work zones and detours in the project area.</li>
+</ul>
+<h4 id="3242-workzoneroadevent-lanes">3.2.4.2 WorkZoneRoadEvent Lanes<a class="headerlink" href="#3242-workzoneroadevent-lanes" title="Permanent link">¶</a></h4>
+<p>If the lanes property on the WorkZoneRoadEvent is provided, it must include one entry for every lane in the road event. Providing lane information for only some of the lanes in a road event is not allowed.</p>
+<h4 id="3243-lane-order">3.2.4.3 Lane Order<a class="headerlink" href="#3243-lane-order" title="Permanent link">¶</a></h4>
+<p>A Lane order or TrafficSensorLaneData lane_order value of 1 must represent the left-most lane when facing downstream traffic and an increase in 1 must represent moving a single lane to the right.</p>
+<h4 id="3244-data-source-id-referential-integrity">3.2.4.4 Data Source ID Referential Integrity<a class="headerlink" href="#3244-data-source-id-referential-integrity" title="Permanent link">¶</a></h4>
+<p>The data_source_id value must match to the data_source_id property of a FeedDataSource included within the same GeoJSON document on the WorkZoneRoadEvents and DetourRoadEvents.</p>
+<h4 id="3245-utc-date-time-format-specification">3.2.4.5 UTC Date-Time Format Specification<a class="headerlink" href="#3245-utc-date-time-format-specification" title="Permanent link">¶</a></h4>
+<p>All dates and times must be expressed in UTC.</p>
+<h4 id="3246-uuid-format-specification">3.2.4.6 UUID Format Specification<a class="headerlink" href="#3246-uuid-format-specification" title="Permanent link">¶</a></h4>
+<p>All universally unique identifiers (UUID) must comply with the UUID standard (RFC 4122) reference. There may be cases (e.g., cases of privacy) where the UUID may need to change over time.</p>
+<h2 id="33-data-exchange-requirements">3.3 Data Exchange Requirements<a class="headerlink" href="#33-data-exchange-requirements" title="Permanent link">¶</a></h2>
+<p>Requirements for data exchange follow.</p>
+<h3 id="331-exchange-workzonefeed-information">3.3.1 Exchange WorkZoneFeed Information<a class="headerlink" href="#331-exchange-workzonefeed-information" title="Permanent link">¶</a></h3>
+<p>Requirements for the exchange of WorkZoneFeed information follow.</p>
+<h4 id="3311-send-workzonefeed-upon-request">3.3.1.1 Send WorkZoneFeed Upon Request<a class="headerlink" href="#3311-send-workzonefeed-upon-request" title="Permanent link">¶</a></h4>
+<p>A data provider shall send WorkZoneFeed information upon request from a data consumer.</p>
+<h3 id="332-exchange-devicefeed-information">3.3.2 Exchange DeviceFeed Information<a class="headerlink" href="#332-exchange-devicefeed-information" title="Permanent link">¶</a></h3>
+<p>Requirements for the exchange of DeviceFeed information follow.</p>
+<h4 id="3321-send-devicefeed-upon-request">3.3.2.1 Send DeviceFeed Upon Request<a class="headerlink" href="#3321-send-devicefeed-upon-request" title="Permanent link">¶</a></h4>
+<p>A data provider shall send DeviceFeed information upon request from a data consumer.</p>
+<h2 id="34-workzonefeed-requirements">3.4 WorkZoneFeed Requirements<a class="headerlink" href="#34-workzonefeed-requirements" title="Permanent link">¶</a></h2>
+<p>The WorkZoneFeed includes the following data definitions, some of which are defined as optional.</p>
+<h3 id="341-contents-of-workzonefeed">3.4.1 Contents of WorkZoneFeed<a class="headerlink" href="#341-contents-of-workzonefeed" title="Permanent link">¶</a></h3>
+<p>The WorkZoneFeed shall consist of the following mandatory and optional requirements:</p>
+<p><span id="341a"></span> a) <strong>feed_info.</strong> Information about the Work Zone Feed. See <a href="#35-feedinfo-requirements">3.5 FeedInfo Requirements</a>. <strong>Required</strong>.<br/>
+<span id="341b"></span> b) <strong>type.</strong> The GeoJSON object type. For a WorkZoneFeed, this must be the string 'FeatureCollection'. <strong>Required.</strong><br/>
+<span id="341c"></span> c) <strong>features.</strong> An array of GeoJSON Feature objects (RFC 7946 Section 3.2) representing a WorkZoneFeed's road events. The array consists of one or more instances of the RoadEventFeature. See <a href="#36-roadeventfeature-requirements">3.6 RoadEventFeature Requirements</a>. <strong>Required.</strong><br/>
+<span id="341d"></span> d) <strong>bbox.</strong> Information on the coordinate range for all RoadEventFeatures in the feed. Must be an array of length '2n' where 'n' is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. See <a href="#39-boundingbox-requirements">3.9 BoundingBox Requirements</a>. <strong>Optional.</strong><br/></p>
+<h2 id="35-feedinfo-requirements">3.5 FeedInfo Requirements<a class="headerlink" href="#35-feedinfo-requirements" title="Permanent link">¶</a></h2>
+<p>The FeedInfo includes the following data definitions, some of which are defined as optional.</p>
+<h3 id="351-contents-of-feedinfo">3.5.1 Contents of FeedInfo<a class="headerlink" href="#351-contents-of-feedinfo" title="Permanent link">¶</a></h3>
+<p>The FeedInfo shall consist of the following mandatory and optional requirements:</p>
+<p><span id="351a"></span> a) <strong>publisher.</strong> The organization responsible for publishing the feed. Example: 'State DOT'. <strong>Required.</strong><br/>
+<span id="351b"></span> b) <strong>contact_name.</strong> The name of the individual or group responsible for the data feed. Example: 'Jo Help'. <strong>Optional.</strong><br/>
+<span id="351c"></span> c) <strong>contact_email.</strong> The email address of the individual or group responsible for the data feed. Example: '<a href="mailto:abc@testcity1.gov">abc@testcity1.gov</a>'. <strong>Optional.</strong><br/>
+<span id="351d"></span> d) <strong>update_frequency.</strong> The frequency in seconds at which the data feed is updated. Example: '60'. A value of '-1' indicates that the data feed is not being updated. A value of '0' indicates update on change. <strong>Required.</strong><br/>
+<span id="351e"></span> e) <strong>update_date.</strong> The UTC date and time when the GeoJSON file (representing the instance of the feed) was generated. The recency of the value of this property depends on if the feed producer is generating a new feed GeoJSON file for each request or generating the file in advance and making it available for download (this standard does not mandate a particular distribution method). Note all date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. Business Rule #5. <strong>Required.</strong><br/>
+<span id="351f"></span> f) <strong>version.</strong> The specification version used to create the data feed in 'major.minor' format. Note this mandates that all data in a feed complies to a single version of WorkZoneFeed. Examples: '1.1', '2.0'. <strong>Required.</strong><br/>
+<span id="351g"></span> g) <strong>license.</strong> The URL of the license that applies to the data in the feed. The recommended string is "<a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>". <strong>Required.</strong><br/>
+<span id="351h"></span> h) <strong>data_sources.</strong> A list of specific data sources for the road event data in the feed. Length of array must be at least one. See <a href="#352-contents-of-feeddatasource">3.5.2 FeedDataSource</a>. <strong>Required.</strong><br/></p>
+<h3 id="352-contents-of-feeddatasource">3.5.2 Contents of FeedDataSource<a class="headerlink" href="#352-contents-of-feeddatasource" title="Permanent link">¶</a></h3>
+<p>The FeedDataSource shall consist of the following mandatory and optional requirements:</p>
+<p><span id="352a"></span> a) <strong>data_source_id.</strong> A unique identifier for the data source organization providing work zone data. This identifier is a Universally Unique Identifier (UUID) as defined in RFC 4122 to guarantee uniqueness between feeds and over time. Linked to a road event by the 'data_source_id' property on the road event's core details or a field device by the 'data_source_id' property on the device's core details. See Business Rule #4. <strong>Required.</strong><br/>
+<span id="352b"></span> b) <strong>organization_name.</strong> The name of the organization for the authoritative source of the work zone data. Example: County DOT. <strong>Required.</strong><br/>
+<span id="352c"></span> c) <strong>contact_name.</strong> The name of the individual or group responsible for the data source. Example: 'Jo Help'. <strong>Optional.</strong><br/>
+<span id="352d"></span> d) <strong>contact_email.</strong> The email address of the individual or group responsible for the data source. <strong>Optional.</strong><br/>
+<span id="352e"></span> e) <strong>update_frequency.</strong> The frequency in seconds at which the data source is updated. A value of '-1' indicates that the data source is not being updated. A value of '0' indicates update on change. <strong>Required.</strong><br/>
+<span id="352f"></span> f) <strong>update_date.</strong> The UTC date and time when the data source was last updated. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/></p>
+<h2 id="36-roadeventfeature-requirements">3.6 RoadEventFeature Requirements<a class="headerlink" href="#36-roadeventfeature-requirements" title="Permanent link">¶</a></h2>
+<p>The RoadEventFeature includes the following data definitions, some of which are defined as optional.</p>
+<h3 id="361-contents-of-roadeventfeature">3.6.1 Contents of RoadEventFeature<a class="headerlink" href="#361-contents-of-roadeventfeature" title="Permanent link">¶</a></h3>
+<p>The RoadEventFeature shall consist of the following mandatory and optional requirements:</p>
+<p><span id="361a"></span> a) <strong>id</strong>. A unique identifier issued by the data feed provider to identify the road event. This identifier is a Universally Unique Identifier (UUID) as defined in RFC 4122 to guarantee uniqueness between feeds and over time. This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="361b"></span> b) <strong>type.</strong> The GeoJSON object type. This MUST be the string 'Feature'. This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="361c"></span> c) <strong>properties.</strong> The specific details of the road event. This is a GeoJSON property. The road event consists of either a WorkZoneRoadEvent or a DetourRoadEvent. See <a href="#362-contents-of-workzoneroadevent">3.6.2 Contents of WorkZoneRoadEvent</a> or <a href="#363-contents-of-detourroadevent">3.6.3 Contents of DetourRoadEvent</a>. <strong>Required.</strong><br/>
+<span id="361d"></span> d) <strong>geometry.</strong> The geometry of the road event. The Geometry object's 'type' property MUST be LineString (RFC 7946 Section 3.1.4) or Point (RFC 7946 Section 3.1.2). 'LineString' allows specifying the entire road event path and should be preferred. 'LineString' should be used when at least the start and end coordinates are known. The order of coordinates is meaningful: the first coordinate is the first (furthest upstream) point a road user encounters when traveling through the road event. 'Point' should be used when only one coordinate is known. Where both start and end data are required (e.g., is_start_position_verified and is_end_position_verified), the 'Point' type is allowed. <strong>Required.</strong><br/>
+<span id="361e"></span> e) <strong>bbox.</strong> Information on the coordinate range for this RoadEventFeature. Must be an array of length '2n' where 'n' is the number of dimensions represented in the 'geometry' property, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of the 'geometry'. This is a GeoJSON property. See <a href="#39-boundingbox-requirements">3.9 BoundingBox Requirements</a>. <strong>Optional.</strong><br/></p>
+<h3 id="362-contents-of-workzoneroadevent">3.6.2 Contents of WorkZoneRoadEvent<a class="headerlink" href="#362-contents-of-workzoneroadevent" title="Permanent link">¶</a></h3>
+<p>The WorkZoneRoadEvent shall consist of the following mandatory and optional requirements:</p>
+<p><span id="362a"></span> a) <strong>core_details.</strong> The core details shared by all types of road events, not specific to work zones. See Business Rule #1. See <a href="#364-contents-of-roadeventcoredetails">3.6.4 Contents of RoadEventCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="362b"></span> b) <strong>beginning_cross_street.</strong> Name or number of the nearest cross street along the roadway where the event begins. <strong>Optional.</strong><br/>
+<span id="362c"></span> c) <strong>ending_cross_street.</strong> Name or number of the nearest cross street along the roadway where the event ends. <strong>Optional.</strong><br/>
+<span id="362d"></span> d) <strong>beginning_reference_post.</strong> The linear distance measured against a reference post marker along a roadway where the event begins. A reference post may be a milepost or mile marker, a surveyed distance posted along a roadway measuring the length (in miles or tenth of a mile) from the south west to the north east. These markers are typically notated on State and local government digital road networks. <strong>Optional.</strong><br/>
+<span id="362e"></span> e) <strong>ending_reference_post.</strong> The linear distance measured against a reference post marker along a roadway where the event ends. A reference post may be a milepost or mile marker, a surveyed distance posted along a roadway measuring the length (in miles or tenth of a mile) from the south west to the north east. These markers are typically notated on State and local government digital road networks. <strong>Optional.</strong><br/>
+<span id="362f"></span> f) <strong>reference_post_unit.</strong> Unit of measurement for the WorkZoneRoadEvent 'beginning_reference_post' and 'ending_reference_post', if applicable. See <a href="#3619-enumeration-of-unitofmeasurement">3.6.19 Enumeration of UnitOfMeasurement</a>. <strong>Conditional;</strong> required if either 'beginning_reference_post' or ending_reference_post' is not null.<br/>
+<span id="362g"></span> g) <strong>is_start_position_verified.</strong> Indicates if the start position (first geometric coordinate pair) is based on actual reported data from a GPS-equipped device that measured the location of the start of the work zone. <strong>Required.</strong><br/>
+<span id="362h"></span> h) <strong>is_end_position_verified.</strong> Indicates if the end position (last geometric coordinate pair) is based on actual reported data from a GPS-equipped device that measured the location of the end of the work zone. <strong>Required.</strong><br/>
+<span id="362i"></span> i) <strong>start_date.</strong> The UTC time and date when the event begins. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="362j"></span> j) <strong>end_date.</strong> The UTC time and date when the event ends. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="362k"></span> k) <strong>is_start_date_verified.</strong> Indicates if work has been confirmed to have started, such as from a person or field device. <strong>Required.</strong><br/>
+<span id="362l"></span> l) <strong>is_end_date_verified.</strong> Indicates if work has been confirmed to have ended, such as from a person or field device. <strong>Required.</strong><br/>
+<span id="362m"></span> m) <strong>work_zone_type.</strong> The type of work zone road event, such as if the road event is static or actively moving as part of a moving operation. See <a href="#3613-enumeration-of-workzonetype">3.6.13 Enumeration of WorkZoneType</a>. <strong>Optional.</strong><br/>
+<span id="362n"></span> n) <strong>vehicle_impact.</strong> The impact to vehicular lanes along a single road in a single direction. See <a href="#3614-enumeration-of-vehicleimpact">3.6.14 Enumeration of VehicleImpact</a>. <strong>Required.</strong><br/>
+<span id="362o"></span> o) <strong>location_method.</strong> The typical method used to locate the beginning and end of a work zone impact area. See <a href="#365-enumeration-of-locationmethod">3.6.5 Enumeration of LocationMethod</a>. <strong>Required.</strong><br/>
+<span id="362p"></span> p) <strong>worker_presence.</strong> Indicates whether workers are present in the road event area. See <a href="#3611-contents-of-workerpresence">3.6.11 Contents of WorkerPresence</a>. <strong>Optional.</strong><br/>
+<span id="362q"></span> q) <strong>reduced_speed_limit_kph.</strong> The reduced speed limit posted within the road event, in kilometers per hour. This property only needs to be supplied if the speed limit within the road event is lower than the posted speed limit of the roadway. <strong>Optional.</strong><br/>
+<span id="362r"></span> r) <strong>restrictions.</strong> A list of zero or more road restrictions that apply to the roadway segment described by this road event. Restrictions can also be provided on an individual lane. See <a href="#369-contents-of-restriction">3.6.9 Contents of Restriction.</a> <strong>Optional.</strong><br/>
+<span id="362s"></span> s) <strong>types_of_work.</strong> A list of the types of work being performed in a road event and whether each type results in an architectural change to the roadway. See <a href="#367-contents-of-typeofwork">3.6.7 Contents of TypeOfWork</a>. <strong>Optional.</strong><br/>
+<span id="362t"></span> t) <strong>lanes.</strong> A list of individual lanes within a road event (roadway segment). See Business Rules #1 and #2. See <a href="#368-contents-of-lane">3.6.8 Contents of Lane</a>. <strong>Optional.</strong><br/>
+<span id="362u"></span> u) <strong>impacted_cds_curb_zones.</strong> A list of references to external CDS Curb Zones impacted by the work zone. See <a href="#3610-contents-of-cdscurbzonesreference">3.6.10 Contents of CdsCurbZonesReference</a>. <strong>Optional.</strong><br/></p>
+<h3 id="363-contents-of-detourroadevent">3.6.3 Contents of DetourRoadEvent<a class="headerlink" href="#363-contents-of-detourroadevent" title="Permanent link">¶</a></h3>
+<p>The DetourRoadEvent shall consist of the following mandatory and optional requirements:</p>
+<p><span id="363a"></span> a) <strong>core_details.</strong> The core details of the road event that are shared by all types of road events, not specific to detours. See Business Rule #1. See <a href="#364-contents-of-roadeventcoredetails">3.6.4 Contents of RoadEventCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="363b"></span> b) <strong>beginning_cross_street.</strong> Name or number of the nearest cross street where the event begins. <strong>Optional.</strong><br/>
+<span id="363c"></span> c) <strong>ending_cross_street.</strong> Name or number of the nearest cross street where the event ends. <strong>Optional.</strong><br/>
+<span id="363d"></span> d) <strong>beginning_reference_post.</strong> The linear distance measured against a reference post marker along a roadway where the event begins. A reference post may be a milepost or mile marker, a surveyed distance posted along a roadway measuring the length (in miles or tenth of a mile) from the southwest to the northeast. These markers are typically notated on state and local government digital road networks. <strong>Optional.</strong><br/>
+<span id="363e"></span> e) <strong>ending_reference_post.</strong> The linear distance measured against a reference post marker along a roadway where the event ends. A reference post may be a milepost or mile marker, a surveyed distance posted along a roadway measuring the length (in miles or tenth of a mile) from the south west to the north east. These markers are typically notated on State and local government digital road networks. <strong>Optional</strong>.<br/>
+<span id="363f"></span> f) <strong>reference_post_unit.</strong> Unit of measurement for the DetourRoadEvent 'beginning_reference_post' and 'ending_reference_post', if applicable. See <a href="#3619-enumeration-of-unitofmeasurement">3.6.19 Enumeration of UnitOfMeasurement</a>. <strong>Conditional;</strong> required if either 'beginning_reference_post' or ending_reference_post' is not null.<br/>
+<span id="363g"></span> g) <strong>start_date.</strong> The UTC time and date when the event begins. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="363h"></span> h) <strong>end_date.</strong> The UTC time and date when the event ends. All date-time formats shall follow RFC 3339 Section 5.6 Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="363i"></span> i) <strong>is_start_date_verified.</strong> Indicates whether the detour start has been confirmed by a person, field device, or traffic management center. <strong>Required.</strong><br/>
+<span id="363j"></span> j) <strong>is_end_date_verified.</strong> Indicates whether the detour end has been confirmed by a person, field device, or traffic management center. <strong>Required.</strong><br/></p>
+<h3 id="364-contents-of-roadeventcoredetails">3.6.4 Contents of RoadEventCoreDetails<a class="headerlink" href="#364-contents-of-roadeventcoredetails" title="Permanent link">¶</a></h3>
+<p>The RoadEventCoreDetails shall consist of the following mandatory and optional requirements:</p>
+<p><span id="364a"></span> a) <strong>data_source_id.</strong> Identifies the data source from which the road event originates. See Business Rule #4. <strong>Required.</strong><br/>
+<span id="364b"></span> b) <strong>event_type.</strong> The type/classification of road event. See <a href="#3612-enumeration-of-eventtype">3.6.12 Enumeration of EventType</a>. <strong>Required.</strong><br/>
+<span id="364c"></span> c) <strong>related_road_events.</strong> A list of related road events. Examples include but are not limited to the sequence along the roadway, recurring work zones, related detours, or other associated road events in a similar work area. See <a href="#366-contents-of-relatedroadevent">3.6.6 Contents of RelatedRoadEvent</a>. <strong>Optional.</strong><br/>
+<span id="364d"></span> d) <strong>project_id.</strong> An identifier for the project that the event is part of. A project is the highest-level representation of an area where road work takes place and may span multiple adjacent or intersecting roadways. A project will contain one or more RoadEventFeatures. This project ID does not correspond to an object in a WorkZoneFeed. It is used to group events (and devices, see FieldDeviceCoreDetails) and is a Universally Unique Identifier (UUID) as defined in RFC 4122 to guarantee uniqueness between feeds and over time. <strong>Optional.</strong><br/>
+<span id="364e"></span> e) <strong>road_names.</strong> A list of publicly known names of the road on which the event occurs. This may include the road number designated by a jurisdiction such as a county, state, or interstate (e.g., I-5, VT 133). <strong>Required.</strong><br/>
+<span id="364f"></span> f) <strong>direction.</strong> The digitization direction of the road that is impacted by the event. This value is based on the standard naming for U.S. roadways and indicates the direction of the traffic flow regardless of the real heading angle. Example 'northbound' (for I-5 North). See <a href="#38-direction-requirements">3.8 Direction Requirements</a>. <strong>Required.</strong><br/>
+<span id="364g"></span> g) <strong>name.</strong> A human-readable name for the road event. <strong>Optional.</strong><br/>
+<span id="364h"></span> h) <strong>description.</strong> Short free text description of road event. <strong>Optional.</strong><br/>
+<span id="364i"></span> i) <strong>creation_date.</strong> The UTC time and date when the activity or event was created. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Optional.</strong><br/>
+<span id="364j"></span> j) <strong>update_date.</strong> The UTC date and time when the RoadEventFeature (including child objects) that the RoadEventCoreDetails applies to was most recently updated or confirmed as up to date. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Optional.</strong><br/></p>
+<h3 id="365-enumeration-of-locationmethod">3.6.5 Enumeration of LocationMethod<a class="headerlink" href="#365-enumeration-of-locationmethod" title="Permanent link">¶</a></h3>
+<p>The LocationMethod Enumerated Type describes the typical method used to locate the beginning and end of a work zone impact area.</p>
+<p>The following identifies the enumerations for LocationMethod:</p>
+<ul>
+<li><strong>channel-device-method.</strong> Location of first and last channeling device (e.g., cone or barrier) that is part of a "travel impact effect" (taper) or designates a work zone transition area. <em>This is the preferred location method.</em></li>
+<li><strong>sign-method.</strong> Location of first and last work zone-related signs.</li>
+<li><strong>junction-method.</strong> Location of a junction (e.g., a cross street or exit/entrance ramp) before and after a work zone.</li>
+<li><strong>other.</strong> Location method does not match any of the other options.</li>
+<li><strong>unknown.</strong> Location method is not known.</li>
+</ul>
+<p><strong>Additional Information</strong></p>
+<p>The following sections detail the usage of each location method.</p>
+<ul>
+<li><strong>channel-device-method</strong> (Preferred Method)</li>
+</ul>
+<p>Location of first and last channeling device (e.g., cone or barrier) that is part of a "travel impact effect" (taper) or designates a work zone transition area. For complex work zones with multiple activities, beginning and end locations are the first channeling device for first activity up to the last channeling device of the last activity.</p>
+<ul>
+<li><strong>Simple Scenario</strong></li>
+</ul>
+<p>This example shows one work zone area within a single work zone project. See Figure 5.</p>
+<p><img alt="Figure5. Simple Scenario" src="../images/channel_device_method_simple.png"/></p>
+<p>Figure 5. Simple Scenario</p>
+<ul>
+<li><strong>Complex Scenario</strong></li>
+</ul>
+<p>This example shows three work zone activity areas within a single work zone project. Each activity area is treated as an independent work zone activity record, with its own beginning and end locations corresponding to where each lane taper begins and ends. See Figure 6.</p>
+<p><img alt="Figure6. Complex Scenario" src="../images/channel_device_method_complex.png"/></p>
+<p>Figure 6. Complex Scenario</p>
+<ul>
+<li><strong>sign-method</strong></li>
+</ul>
+<p>Location of first and last work zone-related signs, which may differ from the channelization location. For complex work zones, the beginning location would be the first sign before the first activity, and the end would be the last sign following the last activity. See Figure 7.</p>
+<p><img alt="Figure7. Sign Method" src="../images/sign_method.png"/></p>
+<p>Figure 7. Sign Method</p>
+<ul>
+<li><strong>junction-method</strong></li>
+</ul>
+<p>Location of a Junction (e.g., a cross street or exit/entrance ramp) before and after a work zone. Note that this is similar to the approach used by Waze to designate a road closure event.</p>
+<ul>
+<li><strong>Arterial Scenario</strong></li>
+</ul>
+<p>See Figure 8.</p>
+<p><img alt="Figure8. Arterial Scenario" src="../images/junction_method_arterial.png"/></p>
+<p>Figure 8. Arterial Scenario</p>
+<ul>
+<li><strong>Highway Scenario</strong></li>
+</ul>
+<p>See Figure 9.</p>
+<p><img alt="Figure9. Highway Scenario" src="../images/junction_method_highway.png"/></p>
+<p>Figure 9. Highway Scenario</p>
+<h3 id="366-contents-of-relatedroadevent">3.6.6 Contents of RelatedRoadEvent<a class="headerlink" href="#366-contents-of-relatedroadevent" title="Permanent link">¶</a></h3>
+<p>The RelatedRoadEvent shall consist of the following requirements:</p>
+<p><span id="366a"></span> a) <strong>type.</strong> The type of relationship with the road event being identified, such as another sequence of related work zones, a detour, or the next road event in sequence. See <a href="#3623-enumeration-of-relatedroadeventtype">3.6.23 Enumeration of RelatedRoadEventType</a>. <strong>Required.</strong><br/>
+<span id="366b"></span> b) <strong>id.</strong> An identifier for the related road event. The value must correspond to the 'id' of a RoadEventFeature within the same feed. <strong>Required.</strong><br/></p>
+<h3 id="367-contents-of-typeofwork">3.6.7 Contents of TypeOfWork<a class="headerlink" href="#367-contents-of-typeofwork" title="Permanent link">¶</a></h3>
+<p>The TypeOfWork shall consist of the following mandatory and optional requirements:</p>
+<p><span id="367a"></span> a) <strong>type_name.</strong> A high-level text description of the type of work being done. See <a href="#3616-enumeration-of-worktypename">3.6.16 Enumeration of WorkTypeName</a>. <strong>Required.</strong><br/>
+<span id="367b"></span> b) <strong>is_architectural_change.</strong> A flag indicating whether the type of work will result in an architectural change to the roadway. <strong>Optional.</strong><br/></p>
+<h3 id="368-contents-of-lane">3.6.8 Contents of Lane<a class="headerlink" href="#368-contents-of-lane" title="Permanent link">¶</a></h3>
+<p>The Lane shall consist of the following mandatory and optional requirements:</p>
+<p><span id="368a"></span> a) <strong>order.</strong> The position of a lane in sequence on the roadway. This value is an index indicating the order of all the lanes for a road event, starting with 1 for the left-most lane. See Business Rule #3. <strong>Required.</strong><br/>
+<span id="368b"></span> b) <strong>status.</strong> Status of the lane for the traveling public. See <a href="#3617-enumeration-of-lanestatus">3.6.17 Enumeration of LaneStatus</a>. <strong>Required.</strong><br/>
+<span id="368c"></span> c) <strong>type.</strong> An indication of the type of lane or shoulder. See <a href="#3618-enumeration-of-lanetype">3.6.18 Enumeration of LaneType</a>. <strong>Required.</strong><br/>
+<span id="368d"></span> d) <strong>restrictions.</strong> A list of zero or more restrictions specific to the lane. See <a href="#369-contents-of-restriction">3.6.9 Contents of Restriction</a>. <strong>Optional.</strong><br/></p>
+<h3 id="369-contents-of-restriction">3.6.9 Contents of Restriction<a class="headerlink" href="#369-contents-of-restriction" title="Permanent link">¶</a></h3>
+<p>The Restriction shall consist of the following mandatory and optional requirements:</p>
+<p><span id="369a"></span> a) <strong>type.</strong> The type of restriction being enforced. See <a href="#3615-enumeration-of-restrictiontype">3.6.15 Enumeration of RestrictionType</a>. <strong>Required.</strong><br/>
+<span id="369b"></span> b) <strong>value.</strong> A value associated with the restriction, if applicable. For example, if 'type' is 'reduced-height', 'value' and 'unit' together would allow indicating what value the height was reduced to. <strong>Optional.</strong><br/>
+<span id="369c"></span> c) <strong>unit.</strong> Unit of measurement for the restriction 'value', if applicable. See <a href="#3619-enumeration-of-unitofmeasurement">3.6.19 Enumeration of UnitOfMeasurement</a>. <strong>Conditional:</strong> required if 'value' is not null.<br/></p>
+<h3 id="3610-contents-of-cdscurbzonesreference">3.6.10 Contents of CdsCurbZonesReference<a class="headerlink" href="#3610-contents-of-cdscurbzonesreference" title="Permanent link">¶</a></h3>
+<p>The CdsCurbZonesReference shall consist of the following requirements. See OpenMobilityFoundation's Curb Data Specification at <a href="https://github.com/openmobilityfoundation/curb-data-specification">https://github.com/openmobilityfoundation/curb-data-specification</a>.</p>
+<p><span id="3610a"></span> a) <strong>cds_curb_zone_ids.</strong> A list of CDS Curb Zone 'ids'. <strong>Required.</strong><br/>
+<span id="3610b"></span> b) <strong>cds_curbs_api_url.</strong> An identifier for the source of the requested CDS Curbs API. This MUST be a full HTTPS URL pointing to the main Curbs API that contains detailed information about each curb zone identified in 'cds_curb_zone_ids'. <strong>Required.</strong><br/></p>
+<h3 id="3611-contents-of-workerpresence">3.6.11 Contents of WorkerPresence<a class="headerlink" href="#3611-contents-of-workerpresence" title="Permanent link">¶</a></h3>
+<p>The WorkerPresence shall consist of the following mandatory and optional requirements:</p>
+<p><span id="3611a"></span> a) <strong>are_workers_present.</strong> Indicates whether workers are present in the work zone event area. This value align with the definition provided in the 'definition' property if it is provided. <strong>Required.</strong><br/>
+<span id="3611b"></span> b) <strong>method.</strong> how worker presence in a work zone event area is determined. See <a href="#3620-enumeration-of-workerpresencemethod">3.6.20 Enumeration of WorkerPresenceMethod</a>. <strong>Optional.</strong><br/>
+<span id="3611c"></span> c) <strong>worker_presence_last_confirmed_date.</strong> The UTC date and time at which the presence of workers was last confirmed. All date-time formats shall follow RFC 3339 Section 5.6. See Business Rule #5. <strong>Optional.</strong><br/>
+<span id="3611d"></span> d) <strong>confidence.</strong> The data producer's confidence in the value of 'are_workers_present'. See <a href="#3622-enumeration-of-workerpresenceconfidence">3.6.22 Enumeration of WorkerPresenceConfidence</a>. <strong>Optional.</strong><br/>
+<span id="3611e"></span> e) <strong>definition.</strong> A list of situations in which workers are considered to be present in the jurisdiction of the data provider. See <a href="#3621-enumeration-of-workerpresencedefinition">3.6.21 Enumeration of WorkerPresenceDefinition</a>. <strong>Optional.</strong><br/>
+<span id="3611f"></span> f) <strong>other_method.</strong> Details the method used to determine worker presence in a work zone event area if the enumeration method is 'other'.. <strong>Conditional;</strong> required if 'method' enumeration is 'other'.<br/></p>
+<h3 id="3612-enumeration-of-eventtype">3.6.12 Enumeration of EventType<a class="headerlink" href="#3612-enumeration-of-eventtype" title="Permanent link">¶</a></h3>
+<p>The EventType Enumerated Type describes the type of a WorkZoneFeed road event.</p>
+<p>The following identifies the enumerations for EventType:</p>
+<ul>
+<li><strong>work-zone.</strong> An area of a trafficway with highway construction, maintenance, or utility-work activities. A work zone is typically marked by signs, channeling devices, barriers, pavement markings, and/or work vehicles. It extends from the first warning sign or flashing lights on a vehicle to the "End of Road Work" sign or the last traffic control device. A work zone may vary in durations and may include stationary or moving activities.</li>
+</ul>
+<p>Inclusions:</p>
+<ul>
+<li></li>
+<li>Long-term stationary highway construction such as building a new bridge, adding travel lanes to the roadway, and extending an existing trafficway.</li>
+<li>Mobile highway maintenance, such as striping the roadway median, roadside grass mowing/landscaping, and pothole repair.</li>
+<li>Short-term stationary utility work such as repairing electric, gas, or water lines within the trafficway.</li>
+</ul>
+<p>Exclusions:</p>
+<ol>
+<li>Private construction, maintenance, or utility work outside the trafficway.</li>
+</ol>
+<p>*The AASHTO term equivalent to "roadway" is "traveled way."</p>
+<p>*The AASHTO term equivalent to "trafficway" is "highway, street, or road."</p>
+<p>Source: <a href="https://www.fhwa.dot.gov/publications/publicroads/99mayjun/workzone.cfm">https://www.fhwa.dot.gov/publications/publicroads/99mayjun/workzone.cfm</a></p>
+<ul>
+<li><strong>detour.</strong> A temporary rerouting of road users onto an existing trafficway to avoid a work zone or other impedance</li>
+</ul>
+<p>Source: <a href="https://mutcd.fhwa.dot.gov/htm/2009/part6/part6c.htm">https://mutcd.fhwa.dot.gov/htm/2009/part6/part6c.htm</a></p>
+<h3 id="3613-enumeration-of-workzonetype">3.6.13 Enumeration of WorkZoneType<a class="headerlink" href="#3613-enumeration-of-workzonetype" title="Permanent link">¶</a></h3>
+<p>The WorkZoneType Enumerated Type describes the type of work zone road event.</p>
+<p>The following identifies the enumerations for WorkZoneType:</p>
+<ul>
+<li><strong>static.</strong> The road event statically placed - not moving.</li>
+<li><strong>moving.</strong> The road event is actively moving on the roadway. As opposed to 'planned-moving-area', the road event geometry changes as the operation moves.</li>
+<li><strong>planned-moving-area.</strong> The planned extent of a moving operation. The active work area will be somewhere within this road event. As opposed to 'moving', the road event geometry typically does not actively change.</li>
+</ul>
+<h3 id="3614-enumeration-of-vehicleimpact">3.6.14 Enumeration of VehicleImpact<a class="headerlink" href="#3614-enumeration-of-vehicleimpact" title="Permanent link">¶</a></h3>
+<p>The VehicleImpact Enumerated Type describes the impact to vehicular lanes along a single road in a single direction.</p>
+<p>The following identifies the enumerations for VehicleImpact:</p>
+<ul>
+<li><strong>all-lanes-closed.</strong> All lanes are closed</li>
+<li><strong>some-lanes-closed.</strong> Some lanes are closed</li>
+<li><strong>all-lanes-open.</strong> All lanes are open</li>
+<li><strong>alternating-one-way.</strong> The roadway is alternating one way</li>
+<li><strong>some-lanes-closed-<abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>-left.</strong> Some lanes <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr> to the left</li>
+<li><strong>some-lanes-closed-<abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>-right.</strong> Some lanes <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr> to the right</li>
+<li><strong>all-lanes-open-shift-left.</strong> All lanes are open, shift to the left</li>
+<li><strong>all-lanes-open-shift-right.</strong> All lanes are open, shift to the right</li>
+<li><strong>some-lanes-closed-split.</strong> Some lanes end and split and <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr> to the right and left</li>
+<li><strong>flagging.</strong> A flagging operation is in effect</li>
+<li><strong>temporary-traffic-signal.</strong> A temporary traffic signal is in operation</li>
+<li><strong>unknown.</strong> The vehicle impact is unknown</li>
+</ul>
+<h3 id="3615-enumeration-of-restrictiontype">3.6.15 Enumeration of RestrictionType<a class="headerlink" href="#3615-enumeration-of-restrictiontype" title="Permanent link">¶</a></h3>
+<p>The RestrictionType Enumerated Type describes the type of vehicle restriction on a roadway.</p>
+<p>The following identifies the enumerations for RestrictionType:</p>
+<ul>
+<li><strong>local-access-only.</strong> Access is restricted to local addresses, emergency services, deliveries, and direct property access.</li>
+<li><strong>no-trucks.</strong> Trucks are prohibited from traveling this part of the network.</li>
+<li><strong>travel-peak-hours-only.</strong> Travel restricted to travel peak hours only.</li>
+<li><strong>hov-3.</strong> Travel restricted to high occupancy vehicles of three or more.</li>
+<li><strong>hov-2.</strong> Travel restricted to high occupancy vehicles of two or more.</li>
+<li><strong>no-parking.</strong> No parking along the segment being described.</li>
+<li><strong>reduced-width.</strong> Lane width is reduced along the segment being described.</li>
+<li><strong>reduced-height.</strong> Height restrictions are reduced along the segment being described.</li>
+<li><strong>reduced-length.</strong> Vehicle length restrictions are reduced along the segment being described.</li>
+<li><strong>reduced-weight.</strong> Vehicle weight restrictions are reduced along the segment being described.</li>
+<li><strong>axle-load-limit.</strong> Vehicle axle-load-limit restrictions are reduced along the segment being described.</li>
+<li><strong>gross-weight-limit.</strong> Vehicle gross-weight-limit restrictions are reduced along the segment being described.</li>
+<li><strong>towing-prohibited.</strong> Towing is prohibited along the segment being described.</li>
+<li><strong>permitted-oversize-loads-prohibited.</strong> "Permitted oversize loads" prohibited along the segment being described; this applies to annual oversize load permits.</li>
+<li><strong>no-passing.</strong> Crossing the center line markings for passing is prohibited.</li>
+</ul>
+<h3 id="3616-enumeration-of-worktypename">3.6.16 Enumeration of WorkTypeName<a class="headerlink" href="#3616-enumeration-of-worktypename" title="Permanent link">¶</a></h3>
+<p>The WorkTypeName Enumerated Type is a high-level text description of the type of work being done in a road event.</p>
+<p>The following identifies the enumerations for WorkTypeName:</p>
+<ul>
+<li><strong>non-encroachment.</strong> Work with no impact on the roadway, such as trash pickup, mowing, or landscaping.</li>
+<li><strong>minor-road-defect-repair.</strong> Pothole repair, road crack repair and sealing, and other small road defect repairs.</li>
+<li><strong>roadside-work.</strong> Work that is isolated to the side of the road and not in the main travel way, such as repair, replacement, or addition of streetlights, VMS, signs (guide, warning, regulatory, and information signs) in the ground.</li>
+<li><strong>overhead-work.</strong> Work that occurs above the road, such as repair/replacement of overpasses, overhead VMS, wires, overhead signs, signals, etc. This type of work requires a bucket truck or similar setup rather than being isolated to the side of the road.</li>
+<li><strong>below-road-work.</strong> Work occurring below the road such as boring or bridge repair.</li>
+<li><strong>barrier-work.</strong> Repair, replacement, addition, or change of barriers, guardrails, retaining walls, K-barriers, or similar.</li>
+<li><strong>surface-work.</strong> New resurfacing, such as adding new lanes, moving lanes, or adding or changing connectivity (turn lanes), as well as creation or repair of non-drivable surfaces such as the shoulder or median.</li>
+<li><strong>painting.</strong> Repainting, re-striping, adding new lanes, moving lanes, adding stop bars/lines, etc. <em>Note: 'is_architectural_change' (See 3.6.7 b)) field should be false when new paint is expected to be within 1 meter of the old paint.</em></li>
+<li><strong>roadway-relocation.</strong> Physically relocating the road, such as adding a bridge or removing a sharp curve.</li>
+<li><strong>roadway-creation.</strong> Adding a new road.</li>
+</ul>
+<h3 id="3617-enumeration-of-lanestatus">3.6.17 Enumeration of LaneStatus<a class="headerlink" href="#3617-enumeration-of-lanestatus" title="Permanent link">¶</a></h3>
+<p>The LaneStatus Enumerated Type describes the status of a lane for the traveling public.</p>
+<p>The following identifies the enumerations for LaneStatus:</p>
+<ul>
+<li><strong>open.</strong> The lane is open for normal usage</li>
+<li><strong>closed.</strong> The lane is closed to normal usage</li>
+<li><strong>shift-left.</strong> The lane shifts left from its current bearing and continues</li>
+<li><strong>shift-right.</strong> The lane shifts right from its current bearing and continues</li>
+<li><strong><abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>-left.</strong> The lane gradually tapers while merging into the lane directly to the left</li>
+<li><strong><abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>-right.</strong> The lane gradually tapers while merging into the lane directly to the right</li>
+<li><strong>alternating-flow.</strong> Traffic may travel in either direction, depending on certain conditions. Example conditions include time of day (e.g., reversible lanes), automated controls, or on-site personnel</li>
+</ul>
+<h3 id="3618-enumeration-of-lanetype">3.6.18 Enumeration of LaneType<a class="headerlink" href="#3618-enumeration-of-lanetype" title="Permanent link">¶</a></h3>
+<p>The LaneType Enumerated Type provides a description of the static properties of a section of the roadway, intended to reflect information about its function that is not covered by its status (see LaneStatus).</p>
+<p>The following identifies the enumerations for LaneType:</p>
+<ul>
+<li><strong>general.</strong> A generic lane type, intended to be used for general purpose travel lanes.</li>
+<li><strong>exit-lane.</strong> A lane leading towards an egress from the current roadway. An 'exit-lane' usually becomes an 'exit-ramp' after a gore point.</li>
+<li><strong>exit-ramp.</strong> A lane at an interchange leading away from the current roadway to another roadway.</li>
+<li><strong>entrance-lane.</strong> A lane leading away from an ingress to the current roadway. An 'entrance-ramp' usually becomes an 'entrance-lane' after a gore point.</li>
+<li><strong>entrance-ramp.</strong> A lane at an interchange for traffic to ingress from another roadway to the mainline.</li>
+<li><strong>sidewalk.</strong> A path for pedestrians, usually on the side of the roadway.</li>
+<li><strong>bike-lane.</strong> A lane on the roadway for use by cyclists only.</li>
+<li><strong>shoulder.</strong> A portion of the roadway that is outside (either right or left) of the main travel lanes. A shoulder can have many uses but is not intended for general traffic.</li>
+<li><strong>parking.</strong> A lane designated for parking that prohibits travel.</li>
+<li><strong>median.</strong> An often unpaved, non-drivable area that separates sections of the roadway. In most cases a median should only be described if it separates lanes in a single direction of travel. As per Business Rule #1 each direction of travel must be represented by a separate road event.</li>
+<li><strong>two-way-center-turn-lane.</strong> A lane in the center of a bidirectional roadway that traffic from both directions uses to make a turn that crosses the opposite direction of traffic (i.e., left in right-side driving countries, and right in left-side driving countries).</li>
+</ul>
+<p><strong>Additional Information</strong></p>
+<p>The LaneType enumerated type was originally based on the TMDD LaneRoadway Enumeration, which was imported into TMDD from SAE 2540 (ITIS Standard). In later release, other standards were examined for inspiration. These include SAE J2735 and the ISO 20524-1 Geographic Data Files (GDF) standard.</p>
+<h3 id="3619-enumeration-of-unitofmeasurement">3.6.19 Enumeration of UnitOfMeasurement<a class="headerlink" href="#3619-enumeration-of-unitofmeasurement" title="Permanent link">¶</a></h3>
+<p>The UnitOfMeasurement Enumerated Type indicates the unit of measurement. This enumerated type is intended for use across the specification and more values can be added in the future if needed.</p>
+<p>The following identifies the enumerations for UnitOfMeasurement:</p>
+<ul>
+<li><strong>feet.</strong> Imperial system 'feet'</li>
+<li><strong>inches.</strong> Imperial system 'inches'</li>
+<li><strong>centimeters.</strong> Metric system 'centimeters'</li>
+<li><strong>pounds.</strong> Imperial system 'pounds'</li>
+<li><strong>tons.</strong> Imperial system 'tons'</li>
+<li><strong>kilograms.</strong> Metric system 'kilograms'</li>
+<li><strong>miles.</strong> Imperial system 'miles'</li>
+<li><strong>kilometers.</strong> Metric system 'kilometers'</li>
+</ul>
+<h3 id="3620-enumeration-of-workerpresencemethod">3.6.20 Enumeration of WorkerPresenceMethod<a class="headerlink" href="#3620-enumeration-of-workerpresencemethod" title="Permanent link">¶</a></h3>
+<p>The WorkerPresenceMethod Enumerated Type describes methods for determining worker presence in a work zone event area.</p>
+<p>The following identifies the enumerations for WorkerPresenceMethod:</p>
+<ul>
+<li><strong>camera-monitoring.</strong> Presence of workers is confirmed through cameras in the work zone event area.</li>
+<li><strong>maintenance-vehicle-present.</strong> A GPS-enabled maintenance vehicle is located in the road event area.</li>
+<li><strong>wearables-present.</strong> Workers wearing wearable detection equipment are present in the work zone.</li>
+<li><strong>mobile-device-present.</strong> Workers with a GPS-enabled mobile device on their person are present in the work zone.</li>
+<li><strong>check-in-app.</strong> Workers have checked into the work zone via a mobile app.</li>
+<li><strong>check-in-verbal.</strong> Workers have checked into the work zone via phone or radio to a remote operations center.</li>
+<li><strong>other.</strong> Worker presence determined through another method. Details in text field for WorkerPresence other_method.</li>
+</ul>
+<h3 id="3621-enumeration-of-workerpresencedefinition">3.6.21 Enumeration of WorkerPresenceDefinition<a class="headerlink" href="#3621-enumeration-of-workerpresencedefinition" title="Permanent link">¶</a></h3>
+<p>The WorkerPresenceDefinition Enumerated Type describes situations in which workers may be considered present in a work zone.</p>
+<p>The following identifies the enumerations for WorkerPresenceDefinition:</p>
+<ul>
+<li><strong>workers-in-work-zone-working.</strong> Humans are physically in the work zone event area, doing road work.</li>
+<li><strong>workers-in-work-zone-not-working.</strong> Humans are physically in the work zone event area but not performing work.</li>
+<li><strong>mobile-equipment-in-work-zone-moving.</strong> Mobile equipment is moving within the work zone event area, implying the presence of a worker.</li>
+<li><strong>mobile-equipment-in-work-zone-not-moving.</strong> Mobile equipment is in the work zone event area but is not moving.</li>
+<li><strong>fixed-equipment-in-work-zone.</strong> Fixed equipment is in the work zone event area.</li>
+<li><strong>humans-behind-barrier.</strong> Humans are present in the work zone event area but separated from traffic by a barrier.</li>
+<li><strong>humans-in-right-of-way.</strong> Humans are present on the drivable surface.</li>
+</ul>
+<h3 id="3622-enumeration-of-workerpresenceconfidence">3.6.22 Enumeration of WorkerPresenceConfidence<a class="headerlink" href="#3622-enumeration-of-workerpresenceconfidence" title="Permanent link">¶</a></h3>
+<p>The WorkerPresenceConfidence Enumerated Type is a high-level description of a feed publisher's confidence in the reported value of 'are_workers_present' on the WorkerPresence object.</p>
+<p>The following identifies the enumerations for WorkerPresenceConfidence:</p>
+<ul>
+<li><strong>low.</strong> Feed publisher is not confident in the reported value, such as when data is manually reported or not updated frequently.</li>
+<li><strong>medium.</strong> Feed publisher is somewhat confident in the reported value, such as when the value is manually reported but is being updated in a timely manner, or when worker presence is indirectly inferred from other equipment like a smart arrow board.</li>
+<li><strong>high.</strong> Feed publisher is very confident in the reported value, such as when automated systems with GPS locations are used to generate the value.</li>
+</ul>
+<h3 id="3623-enumeration-of-relatedroadeventtype">3.6.23 Enumeration of RelatedRoadEventType<a class="headerlink" href="#3623-enumeration-of-relatedroadeventtype" title="Permanent link">¶</a></h3>
+<p>The RelatedRoadEventType Enumerated Type describes the relationship between road events, and the road event that the RelatedRoadEvent object references. For example, it may indicate the first road event in a sequence of events along the roadway, an instance of a recurrent work zone, a nearby work zone-type road event, or a nearby detour-type road event.</p>
+<p>In many cases, the related road event type only refers to the first road event, as the corresponding "work zone" may encompass multiple road events. In these situations, end users must identify the "first" road event and iterate through all linked road events to find all related road events.</p>
+<p>The following identifies the enumerations for RelatedRoadEventType:</p>
+<ul>
+<li><strong>first-in-sequence.</strong> The first road event in a sequence of road events that together describe a full work zone or detour</li>
+<li><strong>next-in-sequence.</strong> The next (subsequent) road event in a sequence of road events that together describe a full work zone or detour</li>
+<li><strong>first-occurrence.</strong> The first road event in the first occurrence in time of a recurrent work zone</li>
+<li><strong>next-occurrence.</strong> The first road event in the next occurrence in time of a recurrent work zone</li>
+<li><strong>related-work-zone.</strong> The first road event of related work zones (i.e., not part of a sequence of road events or recurrent work zone)</li>
+<li><strong>related-detour.</strong> The first road event of related detours (i.e., not part of a sequence of road events)</li>
+<li><strong>planned-moving-operation.</strong> The first road event of a related planned moving operation work zones (i.e., not part of a sequence of road events)</li>
+<li><strong>active-moving-operation.</strong> The first road event of a related active moving operation work zones (i.e., not part of a sequence of road events)</li>
+</ul>
+<h2 id="37-devicefeed-requirements">3.7 DeviceFeed Requirements<a class="headerlink" href="#37-devicefeed-requirements" title="Permanent link">¶</a></h2>
+<p>The DeviceFeed includes the following data definitions, some of which are defined as optional.</p>
+<h3 id="371-contents-of-devicefeed">3.7.1 Contents of DeviceFeed<a class="headerlink" href="#371-contents-of-devicefeed" title="Permanent link">¶</a></h3>
+<p>The DeviceFeed shall consist of the following mandatory and optional requirements:</p>
+<p><span id="371a"></span> a) <strong>feed_info.</strong> Information about the data feed. This is a standard-specific foreign member and is not part of the GeoJSON specification. See <a href="#35-feedinfo-requirements">3.5 FeedInfo Requirements</a>. <strong>Required.</strong><br/>
+<span id="371b"></span> b) <strong>type.</strong> The GeoJSON object type. For this standard, this must be the string 'FeatureCollection'. This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="371c"></span> c) <strong>features.</strong> An array of GeoJSON Feature objects which each represent a field device deployed in a work zone. This is a GeoJSON property. See <a href="#372-contents-of-fielddevicefeature">3.7.2 Contents of FieldDeviceFeature</a>. <strong>Required.</strong><br/>
+<span id="371d"></span> d) <strong>bbox.</strong> Coordinate range for all 'FieldDeviceFeature's in the feed. The value must be an array of length '2n', where 'n' is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a 'bbox' follows the axes order of geometries. This is a GeoJSON property. See <a href="#39-boundingbox-requirements">3.9 BoundingBox Requirements</a>. <strong>Optional.</strong><br/></p>
+<h3 id="372-contents-of-fielddevicefeature">3.7.2 Contents of FieldDeviceFeature<a class="headerlink" href="#372-contents-of-fielddevicefeature" title="Permanent link">¶</a></h3>
+<p>The FieldDeviceFeature shall consist of the following mandatory and optional requirements:</p>
+<p><span id="372a"></span> a) <strong>id.</strong> A unique identifier issued by the data feed provider to identify the field device. This identifier is a Universally Unique Identifier (UUID) as defined in RFC 4122 to guarantee uniqueness between feeds and over time. This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="372b"></span> b) <strong>type.</strong> The GeoJSON object type. This MUST be the string 'Feature'. This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="372c"></span> c) <strong>properties.</strong> The specific details of the field device. This is a GeoJSON property. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="372d"></span> d) <strong>geometry.</strong> The geometry of the field device, indicating its location. The Geometry object's 'type' property MUST be Point (RFC 7946 Section 3.1.2). This is a GeoJSON property. <strong>Required.</strong><br/>
+<span id="372e"></span> e) <strong>bbox.</strong> The coordinate range for this field device. Must be an array of length '2n', where 'n' is the number of dimensions represented in the 'geometry' property, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of the 'geometry'. This is a GeoJSON property. See <a href="#39-boundingbox-requirements">3.9 BoundingBox Requirements</a>. <strong>Optional.</strong><br/></p>
+<h3 id="373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails<a class="headerlink" href="#373-contents-of-fielddevicecoredetails" title="Permanent link">¶</a></h3>
+<p>The FieldDeviceCoreDetails shall consist of the following mandatory and optional requirements:</p>
+<p><span id="373a"></span> a) <strong>device_type</strong>. The type of field device. See <a href="#3717-enumeration-of-fielddevicetype">3.7.17 Enumeration of FieldDeviceType</a>. <strong>Required</strong>.<br/>
+<span id="373b"></span> b) <strong>data_source_id</strong>. Identifies the data source from which the field device data originates. <strong>Required</strong>.<br/>
+<span id="373c"></span> c) <strong>device_status</strong>. The operational status of the field device, indicating whether the device is functioning properly or is in an error or warning state. See <a href="#3718-enumeration-of-fielddevicestatus">3.7.18 Enumeration of FieldDeviceStatus</a>. <strong>Required</strong>.<br/>
+<span id="373d"></span> d) <strong>update_date</strong>. The UTC time and date when the field device information was last updated. <strong>Required</strong>.<br/>
+<span id="373e"></span> e) <strong>has_automatic_location</strong>. A yes/no value indicating if the field device location (parent FieldDeviceFeature's 'geometry') is determined automatically by an onboard GPS ('true') or manually set/overridden ('false'). <strong>Required</strong>.<br/>
+<span id="373f"></span> f) <strong>road_direction</strong>. The direction of the road that the field device is on. This value indicates the direction of the traffic flow of the road, not a real heading angle. See <a href="#38-direction-requirements">3.8 Direction Requirements</a>. <strong>Optional</strong>.<br/>
+<span id="373g"></span> g) <strong>road_names</strong>. A list of publicly known names of the road on which the device is located. This may include the road number designated by a jurisdiction such as a county, state, or interstate (e.g., I-5, VT 133). <strong>Optional.</strong><br/>
+<span id="373h"></span> h) <strong>name</strong>. A human-readable name for the field device. <strong>Optional.</strong><br/>
+<span id="373i"></span> i) <strong>description</strong>. A description of the field device. <strong>Optional.</strong><br/>
+<span id="373j"></span> j) <strong>status_messages</strong>. A list of messages associated with the device's status, if applicable, providing additional information about the status such as specific warning or error messages. <strong>Optional</strong>. Note: The content of this property is determined by the producer.<br/>
+<span id="373k"></span> k) <strong>is_moving</strong>. A yes/no value indicating if the device is actively moving (not statically placed) as part of a mobile work zone operation. <strong>Optional</strong>. Note: The 'is_moving' property is optional and should not be provided if it is not known whether the device is moving.<br/>
+<span id="373l"></span> l) <strong>road_event_ids</strong>. A list of one or more IDs of a road event feature. See RoadEventFeature that the device is associated with. <strong>Optional.</strong><br/>
+<span id="373m"></span> m) <strong>project_id.</strong> An identifier for the project associated with the device.. A project is the highest-level representation of an area where road work takes place and may include multiple roadways if they are adjacent or intersecting. This project ID does not correspond to an object in a WorkZoneFeed. It is used to group devices (and events, see RoadEventCoreDetails). This identifier is a Universally Unique Identifier (UUID) as defined in RFC 4122 to guarantee uniqueness between feeds and over time. <strong>Optional.</strong><br/>
+<span id="373n"></span> n) <strong>reference_post</strong>. The linear distance measured against a reference post (such as a milepost marker) along the roadway where the device is located. <strong>Optional.</strong><br/>
+<span id="373o"></span> o) <strong>reference_post_unit.</strong> Unit of measurement for the FieldDeviceCoreDetails 'reference_post', if applicable. See <a href="#3715-enumeration-of-unitofmeasurement">3.7.15 Enumeration of UnitOfMeasurement.</a> <strong>Conditional:</strong> Required if 'reference_post' is not null.<br/>
+<span id="373p"></span> p) <strong>make</strong>. The make or manufacturer of the device. <strong>Optional.</strong><br/>
+<span id="373q"></span> q) <strong>model</strong>. The model of the device. <strong>Optional.</strong><br/>
+<span id="373r"></span> r) <strong>serial_number</strong>. The serial number of the device. <strong>Optional.</strong><br/>
+<span id="373s"></span> s) <strong>firmware_version</strong>. The version of firmware the device is using to operate. <strong>Optional.</strong><br/>
+<span id="373t"></span> t) <strong>velocity_kph</strong>. The velocity of the device in kilometers per hour. <strong>Optional.</strong><br/>
+<span id="373u"></span> u) <strong>is_in_transport_position.</strong> A yes/no value indicating if the device is in the stowed/transport position ('true') or deployed/upright position ('false'). <strong>Optional.</strong><br/></p>
+<h3 id="374-contents-of-arrowboard">3.7.4 Contents of ArrowBoard<a class="headerlink" href="#374-contents-of-arrowboard" title="Permanent link">¶</a></h3>
+<p>The ArrowBoard shall consist of the following mandatory and optional requirements:</p>
+<p><span id="374a"></span> a) <strong>core_details.</strong> The core details shared by all types of field devices, not specific to arrow boards. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="374b"></span> b) <strong>pattern.</strong> The current pattern displayed on the arrow board. Note this includes 'blank', which indicates that no pattern is shown on the arrow board. See <a href="#3716-enumeration-of-arrowboardpattern">3.7.16 Enumeration of ArrowBoardPattern</a>. <strong>Required.</strong><br/></p>
+<h3 id="375-contents-of-camera">3.7.5 Contents of Camera<a class="headerlink" href="#375-contents-of-camera" title="Permanent link">¶</a></h3>
+<p>The Camera shall consist of the following mandatory and optional requirements:</p>
+<p><span id="375a"></span> a) <strong>core_details.</strong> The core details shared by all types of field devices, not specific to cameras. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="375b"></span> b) <strong>image_url.</strong> A URL pointing to an image file of the camera's current still image. <strong>Optional.</strong><br/>
+<span id="375c"></span> c) <strong>is_image_url_public.</strong> Identifies whether the image_url is publicly accessible. <strong>Optional.</strong><br/>
+<span id="375d"></span> d) <strong>image_timestamp.</strong> The UTC date and time when the image was captured. See Business Rule #5. <strong>Conditional;</strong> required if 'image_url' is provided.<br/>
+<span id="375e"></span> e) <strong>video_url.</strong> A URL pointing to a video file for the camera video. <strong>Optional.</strong><br/>
+<span id="375f"></span> f) <strong>is_video_url_public.</strong> Identifies whether the video_url is publicly accessible. <strong>Optional.</strong><br/>
+<span id="375g"></span> g) <strong>video_update_frequency.</strong> The frequency at which the video feed is updated. A value of '-1' indicates that the video feed is not being updated (i.e., a video clip). A value of '0' indicates that the video feed is live. A positive integer value indicates that the video feed is being recorded on a loop where the value is the length of one loop in minutes. <strong>Conditional:</strong> Required if 'video_url' is not null.<br/></p>
+<h3 id="376-contents-of-dynamicmessagesign">3.7.6 Contents of DynamicMessageSign<a class="headerlink" href="#376-contents-of-dynamicmessagesign" title="Permanent link">¶</a></h3>
+<p>The DynamicMessageSign shall consist of the following requirements:</p>
+<p><span id="376a"></span> a) <strong>core_details.</strong> The core details shared by all types of field devices, not specific to dynamic message signs. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="376b"></span> b) <strong>message_multi_string.</strong> The MULTI-formatted string (Mark-Up Language for Transportation Information, see NTCIP 1203 v03) describing the message currently posted to the sign. If the message is unknown due to an error, the empty string ('') can be used. <strong>Required.</strong><br/></p>
+<h3 id="377-contents-of-flashingbeacon">3.7.7 Contents of FlashingBeacon<a class="headerlink" href="#377-contents-of-flashingbeacon" title="Permanent link">¶</a></h3>
+<p>The FlashingBeacon shall consist of the following mandatory and optional requirements:</p>
+<p><span id="377a"></span> a) <strong>core_details.</strong> The core details shared by all types of field devices, not specific to flashing beacons. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="377b"></span> b) <strong>function.</strong> Describes the function or purpose of the flashing beacon, i.e., i.e., what it is being used to indicate. See <a href="#3719-enumeration-of-flashingbeaconfunction">3.7.19 Enumeration of FlashingBeaconFunction</a>. <strong>Required.</strong><br/>
+<span id="377c"></span> c) <strong>is_flashing.</strong> A yes/no value indicating if the flashing beacon is currently in use and flashing. The 'is_flashing' property is optional and should not be provided if the producer does not know if the beacon is flashing (e.g., if it's in an error state). <strong>Optional.</strong><br/>
+<span id="377d"></span> d) <strong>sign_text.</strong> The message on the sign the beacon is mounted on. <strong>Optional.</strong><br/></p>
+<h3 id="378-contents-of-hybridsign">3.7.8 Contents of HybridSign<a class="headerlink" href="#378-contents-of-hybridsign" title="Permanent link">¶</a></h3>
+<p>The HybridSign shall consist of the following mandatory and optional requirements:</p>
+<p><span id="378a"></span> a) <strong>core_details.</strong> The core details shared by all field device types, not specific to hybrid signs. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="378b"></span> b) <strong>dynamic_message_function.</strong> The function the dynamic message displayed (e.g., a speed limit). See <a href="#3720-enumeration-of-hybridsigndynamicmessagefunction">3.7.20 Enumeration of HybridSignDynamicMessageFunction</a>. <strong>Required.</strong><br/>
+<span id="378c"></span> c) <strong>dynamic_message_text.</strong> A text representation of the message currently posted to the electronic component of the hybrid sign. <strong>Optional.</strong><br/>
+<span id="378d"></span> d) <strong>static_sign_text.</strong> The static text on the non-electronic component of the hybrid sign. This property is currently optional, but it is advisable to provide it as it will be required in a future release. <strong>Optional.</strong><br/></p>
+<h3 id="379-contents-of-locationmarker">3.7.9 Contents of LocationMarker<a class="headerlink" href="#379-contents-of-locationmarker" title="Permanent link">¶</a></h3>
+<p>The LocationMarker shall consist of the following requirements:</p>
+<p><span id="379a"></span> a) <strong>core_details.</strong> The core details shared by all field device types, not specific to the location marker. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="379b"></span> b) <strong>marked_locations.</strong> A list of locations that the 'LocationMarker' is marking. See <a href="#3710-contents-of-markedlocation">3.7.10 Contents of MarkedLocation</a>. <strong>Required.</strong><br/></p>
+<h3 id="3710-contents-of-markedlocation">3.7.10 Contents of MarkedLocation<a class="headerlink" href="#3710-contents-of-markedlocation" title="Permanent link">¶</a></h3>
+<p>The MarkedLocation shall consist of the following mandatory and optional requirements:</p>
+<p><span id="3710a"></span> a) <strong>type.</strong> The type of location (e.g., start or end) that is marked. See <a href="#3721-enumeration-of-markedlocationtype">3.7.21 Enumeration of MarkedLocationType</a>. <strong>Required.</strong><br/>
+<span id="3710b"></span> b) <strong>road_event_id.</strong> The ID of a RoadEventFeature that the 'MarkedLocation' applies to. This property is optional because the field device information producer may not have road event information. <strong>Optional.</strong><br/></p>
+<h3 id="3711-contents-of-trafficsensor">3.7.11 Contents of TrafficSensor<a class="headerlink" href="#3711-contents-of-trafficsensor" title="Permanent link">¶</a></h3>
+<p>The TrafficSensor shall consist of the following mandatory and optional requirements:</p>
+<p><span id="3711a"></span> a) <strong>core_details.</strong> The core details shared by all field device types, not specific to traffic sensors. This property appears on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="3711b"></span> b) <strong>collection_interval_start_date.</strong> The UTC date and time when the collection of 'TrafficSensor' data began.. The averages and totals contained in the 'TrafficSensor' data apply to the inclusive interval of 'collection_interval_start_date' to 'collection_interval_end_date'. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="3711c"></span> c) <strong>collection_interval_end_date.</strong> The UTC date and time when the 'TrafficSensor' collection interval ended. The averages and totals contained in the 'TrafficSensor' data apply to the inclusive interval of 'collection_interval_start_date' to 'collection_interval_end_date'. All date-time formats shall follow RFC 3339 Section 5.6. Example: '2016-11-03T19:37:00Z'. See Business Rule #5. <strong>Required.</strong><br/>
+<span id="3711d"></span> d) <strong>average_speed_kph.</strong> The average speed of vehicles across all lanes over the collection interval in kilometers per hour. <strong>Optional.</strong><br/>
+<span id="3711e"></span> e) <strong>volume_vph.</strong> The rate of vehicles passing by the sensor during the collection interval, in vehicles per hour. <strong>Optional</strong>.<br/>
+<span id="3711f"></span> f) <strong>occupancy_percent.</strong> The percentage of time that the roadway section monitored by the sensor was occupied by a vehicle during the collection interval. <strong>Optional.</strong><br/>
+<span id="3711g"></span> g) <strong>lane_data.</strong> A list of objects each describing traffic data for a specific lane. See <a href="#3712-contents-of-trafficsensorlanedata">3.7.12 Contents of TrafficSensorLaneData</a>. <strong>Optional.</strong><br/></p>
+<h3 id="3712-contents-of-trafficsensorlanedata">3.7.12 Contents of TrafficSensorLaneData<a class="headerlink" href="#3712-contents-of-trafficsensorlanedata" title="Permanent link">¶</a></h3>
+<p>The TrafficSensorLaneData shall consist of the following mandatory and optional requirements:</p>
+<p><span id="3712a"></span> a) <strong>lane_order.</strong> The lane's position in sequence on the roadway. If 'road_event_id' is provided, the value of this property corresponds to the associated road event's Lane's 'order' property. See Business Rule #3. <strong>Required.</strong><br/>
+<span id="3712b"></span> b) <strong>road_event_id.</strong> The ID of a RoadEventFeature that the measured lane is associated with, if applicable. <strong>Optional.</strong><br/>
+<span id="3712c"></span> c) <strong>average_speed_kph.</strong> The average speed of traffic in the lane during the collection interval (in kilometers per hour). <strong>Optional.</strong><br/>
+<span id="3712d"></span> d) <strong>volume_vph.</strong> The rate of vehicles passing by the sensor in the lane during the collection interval (in vehicles per hour). <strong>Optional.</strong><br/>
+<span id="3712e"></span> e) <strong>occupancy_percent.</strong> The percentage of time the lane monitored by the sensor was occupied by a vehicle during the collection interval. <strong>Optional.</strong><br/></p>
+<h3 id="3713-contents-of-trafficsignal">3.7.13 Contents of TrafficSignal<a class="headerlink" href="#3713-contents-of-trafficsignal" title="Permanent link">¶</a></h3>
+<p>The TrafficSignal shall consist of the following requirements:</p>
+<p><span id="3713a"></span> a) <strong>core_details.</strong> The core details of the traffic signal device. This property occurs on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="3713b"></span> b) <strong>mode.</strong> The current operating mode of the traffic signal. See <a href="#3722-enumeration-of-trafficsignalmode">3.7.22 Enumeration of TrafficSignalMode</a>. <strong>Required.</strong><br/></p>
+<h3 id="3714-contents-of-roadsideunit">3.7.14 Contents of RoadsideUnit<a class="headerlink" href="#3714-contents-of-roadsideunit" title="Permanent link">¶</a></h3>
+<p>The RoadsideUnit shall consist of the following mandatory and optional requirements:</p>
+<p><span id="3714a"></span> a) <strong>core_details.</strong> The core details of the roadside unit. This property occurs on all field devices. See <a href="#373-contents-of-fielddevicecoredetails">3.7.3 Contents of FieldDeviceCoreDetails</a>. <strong>Required.</strong><br/>
+<span id="3714b"></span> b) <strong>message_types.</strong> An array of message types being broadcast by the roadside unit. See <a href="#3723-enumeration-of-roadsideunitmessagetypes">3.7.23 Enumeration of RoadsideUnitMessageTypes</a>. <strong>Optional.</strong><br/></p>
+<h3 id="3715-enumeration-of-unitofmeasurement">3.7.15 Enumeration of UnitOfMeasurement<a class="headerlink" href="#3715-enumeration-of-unitofmeasurement" title="Permanent link">¶</a></h3>
+<p>The UnitOfMeasurement Enumerated Type indicates the unit of measurement. This enumerated type is intended for use across the specification and more values can be added in the future if needed.</p>
+<p>The following identifies the enumerations for UnitOfMeasurement:</p>
+<ul>
+<li><strong>feet.</strong> Imperial system 'feet'</li>
+<li><strong>inches.</strong> Imperial system 'inches'</li>
+<li><strong>centimeters.</strong> Metric system 'centimeters'</li>
+<li><strong>pounds.</strong> Imperial system 'pounds'</li>
+<li><strong>tons.</strong> Imperial system 'tons'</li>
+<li><strong>kilograms.</strong> Metric system 'kilograms'</li>
+<li><strong>miles.</strong> Imperial system 'miles'</li>
+<li><strong>kilometers.</strong> Metric system 'kilometers'</li>
+</ul>
+<h3 id="3716-enumeration-of-arrowboardpattern">3.7.16 Enumeration of ArrowBoardPattern<a class="headerlink" href="#3716-enumeration-of-arrowboardpattern" title="Permanent link">¶</a></h3>
+<p>The ArrowBoardPattern Enumerated Type defines a list of options for the posted pattern on an ArrowBoard.</p>
+<p>If the arrow board pattern does not exactly match one of the values described, the closest pattern should be used.</p>
+<p>The following identifies the enumerations for ArrowBoardPattern:</p>
+<ul>
+<li><strong>blank.</strong> No pattern; the board is not displaying anything.</li>
+<li><strong>right-arrow-static.</strong> Merge right represented by an arrow pattern (e.g., '--&gt;') that does not flash or move.</li>
+<li><strong>right-arrow-flashing.</strong> Merge right represented by an arrow pattern (e.g., '--&gt;') that flashes on/off.</li>
+<li><strong>right-arrow-sequential.</strong> Merge right represented by an arrow pattern (e.g., '--&gt;') that is displayed in a progressing sequence (e.g., '&gt;' '-&gt;' '--&gt;' or '-' '--' '--&gt;').</li>
+<li><strong>right-chevron-static.</strong> Merge right represented by a pattern of chevrons (e.g., '&gt;&gt;&gt;') that does not flash or move.</li>
+<li><strong>right-chevron-flashing.</strong> Merge right represented by a pattern of chevrons (e.g., '&gt;&gt;&gt;') that flashes on/off.</li>
+<li><strong>right-chevron-sequential.</strong> Merge right represented by a pattern of chevrons that is displayed in a progressing sequence.</li>
+<li><strong>left-arrow-static.</strong> Merge left represented by an arrow pattern (e.g., '&lt;--') that does not flash or move.</li>
+<li><strong>left-arrow-flashing.</strong> Merge left represented by an arrow pattern (e.g., '&lt;--') that flashes on/off.</li>
+<li><strong>left-arrow-sequential.</strong> Merge left represented by an arrow pattern (e.g., '&lt;--') that is displayed in a progressing sequence (e.g., '&lt;' '&lt;-' '&lt;--' or '-' '--' '&lt;--').</li>
+<li><strong>left-chevron-static.</strong> Merge left represented by a pattern of chevrons (e.g., '&lt;&lt;&lt;') that does not flash or move.</li>
+<li><strong>left-chevron-flashing.</strong> Merge left represented by a pattern of chevrons (e.g., '&lt;&lt;&lt;') that flashes on/off.</li>
+<li><strong>left-chevron-sequential.</strong> Merge left represented by a pattern of chevrons that is displayed in a progressing sequence.</li>
+<li><strong>bidirectional-arrow-static.</strong> Split (<abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr> left or right) represented by arrows pointing both left and right (e.g., '&lt;--&gt;') that does not flash or move.</li>
+<li><strong>bidirectional-arrow-flashing.</strong> Split (<abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr> left or right) represented by arrows pointing both left and right (e.g., '&lt;--&gt;') that flashes on/off.</li>
+<li><strong>line-flashing.</strong> A flashing line or bar (e.g., '---'), indicating warning/caution, not a <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>.</li>
+<li><strong>diamonds-alternating.</strong> An alternating display of two diamond shapes (e.g., '◇ ◇'), indicating warning/caution, not a <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>.</li>
+<li><strong>four-corners-flashing.</strong> Four flashing dots on the corners of the board, indicating warning/caution, not a <abbr title="Merging is the process of combining changes from one branch into another. When a pull request is accepted and merged, the changes made in the pull request become part of the main codebase.">merge</abbr>.</li>
+<li><strong>unknown.</strong> The arrow board pattern is not known.</li>
+</ul>
+<h3 id="3717-enumeration-of-fielddevicetype">3.7.17 Enumeration of FieldDeviceType<a class="headerlink" href="#3717-enumeration-of-fielddevicetype" title="Permanent link">¶</a></h3>
+<p>The FieldDeviceType Enumerated Type enumerates all types of field devices described by the specification.</p>
+<p>The following identifies the enumerations for FieldDeviceType:</p>
+<ul>
+<li><strong>arrow-board.</strong> An electronic, connected arrow board which can display an arrow pattern to direct traffic. See ArrowBoard.</li>
+<li><strong>camera.</strong> A camera device deployed in the field, capable of capturing still images. See Camera.</li>
+<li><strong>dynamic-message-sign.</strong> An electronic traffic sign deployed on the roadway, used to provide information to travelers. See DynamicMessageSign.</li>
+<li><strong>flashing-beacon.</strong> A flashing warning beacon used to supplement a temporary traffic control device. See FlashingBeacon.</li>
+<li><strong>hybrid-sign.</strong> A message sign that contains both static text (e.g., on an aluminum board) along with a variable electronic message sign, used to provide information to travelers. See HybridSign.</li>
+<li><strong>location-marker.</strong> Any GPS-enabled ITS device that is placed at a point on a roadway to mark a location (often the beginning or end of a road event). See LocationMarker.</li>
+<li><strong>traffic-sensor.</strong> A device deployed on a roadway which captures traffic metrics such as speed, volume, and/or occupancy. See TrafficSensor.</li>
+<li><strong>traffic-signal.</strong> A temporary traffic signal deployed on a roadway. See TrafficSignal.</li>
+<li><strong>roadside-unit.</strong> A transceiver able to communicate with on-board units and other connected vehicle environment equipment.</li>
+</ul>
+<h3 id="3718-enumeration-of-fielddevicestatus">3.7.18 Enumeration of FieldDeviceStatus<a class="headerlink" href="#3718-enumeration-of-fielddevicestatus" title="Permanent link">¶</a></h3>
+<p>The FieldDeviceStatus enumerated type describes the operational status of a field device. The status indicates the health of the device.</p>
+<p>The following identifies the enumerations for FieldDeviceStatus:</p>
+<ul>
+<li><strong>ok.</strong> The device is turned on and working without <abbr title="An issue is a problem or bug that needs to be addressed in the code. Issues can be created by anyone, and they're often used to keep track of bugs, feature requests, and other tasks that need to be done.">issue</abbr>.</li>
+<li><strong>warning.</strong> The device is functional but has an impairment or <abbr title="An issue is a problem or bug that needs to be addressed in the code. Issues can be created by anyone, and they're often used to keep track of bugs, feature requests, and other tasks that need to be done.">issue</abbr> that is not critical to its operation.</li>
+<li><strong>error.</strong> The device is impaired such that it cannot perform one or more necessary functions.</li>
+<li><strong>unknown.</strong> The device's operational status is not known.</li>
+</ul>
+<h3 id="3719-enumeration-of-flashingbeaconfunction">3.7.19 Enumeration of FlashingBeaconFunction<a class="headerlink" href="#3719-enumeration-of-flashingbeaconfunction" title="Permanent link">¶</a></h3>
+<p>The FlashingBeaconFunction Enumerated Type lists the purposes the FlashingBeacon is being used to indicate.</p>
+<p>The following identifies the enumerations for FlashingBeaconFunction:</p>
+<ul>
+<li><strong>vehicle-entering.</strong> Vehicles are entering the roadway.</li>
+<li><strong>queue-warning.</strong> There is a queue of vehicles.</li>
+<li><strong>reduced-speed.</strong> There is a reduced speed limit.</li>
+<li><strong>workers-present.</strong> There are workers present on or near the roadway.</li>
+<li><strong>other.</strong> The FlashingBeacon is being used to indicate something other than any of the other values.</li>
+</ul>
+<h3 id="3720-enumeration-of-hybridsigndynamicmessagefunction">3.7.20 Enumeration of HybridSignDynamicMessageFunction<a class="headerlink" href="#3720-enumeration-of-hybridsigndynamicmessagefunction" title="Permanent link">¶</a></h3>
+<p>The HybridSignDynamicMessageFunction Enumerated Type describes the purposes of the dynamic messages displayed by the electronic display on a HybridSign.</p>
+<p>The following identifies the enumerations for HybridSignDynamicMessageFunction:</p>
+<ul>
+<li><strong>speed-limit.</strong> The message is a speed limit.</li>
+<li><strong>travel-time.</strong> The message is a travel time.</li>
+<li><strong>other.</strong> The hybrid sign message function is not one of the other options described by this enumerated type.</li>
+</ul>
+<h3 id="3721-enumeration-of-markedlocationtype">3.7.21 Enumeration of MarkedLocationType<a class="headerlink" href="#3721-enumeration-of-markedlocationtype" title="Permanent link">¶</a></h3>
+<p>The MarkedLocationType enumerated type describes options that a MarkedLocation can indicate, such as the start or end of a work zone.</p>
+<p>The following identifies the enumerations for MarkedLocationType:</p>
+<ul>
+<li><strong>afad.</strong> An automatic flagger assistance device.</li>
+<li><strong>delineator.</strong> A generic delineation point in a work zone. This value can be used for most types of marked locations that don't match any of the other values.</li>
+<li><strong>flagger.</strong> A human who is directing traffic.</li>
+<li><strong>lane-shift.</strong> A lane shift.</li>
+<li><strong>lane-closure.</strong> One or more lanes are closed.</li>
+<li><strong>personal-device.</strong> A connected device that is worn or carried by an individual worker in a work zone.</li>
+<li><strong>ramp-closure.</strong> The start of a closed ramp onto or off a main road or highway.</li>
+<li><strong>road-closure.</strong> The start of a closed road.</li>
+<li><strong>work-truck-with-lights-flashing.</strong> A work truck with lights flashing, actively engaged in construction or maintenance activity on the roadway.</li>
+<li><strong>work-zone-start.</strong> The start point of a work zone.</li>
+<li><strong>work-zone-end.</strong> The end point of a work zone.</li>
+<li><strong>attenuator-vehicle.</strong> A vehicle intended to reduce damage resulting from a collision.</li>
+<li><strong>construction-vehicle.</strong> A vehicle used in the process of roadway construction.</li>
+<li><strong>maintenance-vehicle.</strong> A vehicle used in the process of roadway maintenance.</li>
+<li><strong>emergency-vehicle.</strong> A vehicle used in the process of public safety on roadways.</li>
+<li><strong>stalled-or-disabled-vehicle.</strong> A stalled or disabled vehicle.</li>
+<li><strong>pavement-marking-vehicle.</strong> A vehicle used for pavement marking.</li>
+<li><strong>other.</strong></li>
+</ul>
+<h3 id="3722-enumeration-of-trafficsignalmode">3.7.22 Enumeration of TrafficSignalMode<a class="headerlink" href="#3722-enumeration-of-trafficsignalmode" title="Permanent link">¶</a></h3>
+<p>The TrafficSignalMode Enumerated Type describes the current operating mode of a TrafficSignal.</p>
+<p>The following identifies the enumerations for TrafficSignalMode:</p>
+<ul>
+<li><strong>blank.</strong> The signal is not displaying anything.</li>
+<li><strong>flashing-red.</strong> The signal is in a flashing red state that could be part of startup or fault.</li>
+<li><strong>flashing-yellow.</strong> The signal is in a flashing yellow state that could be part of startup or fault.</li>
+<li><strong>fully-actuated.</strong> The signal is using an external trigger for all movements.</li>
+<li><strong>manual.</strong> The signal is using a manual trigger.</li>
+<li><strong>pre-timed.</strong> The signal operates on a timed cycle.</li>
+<li><strong>semi-actuated.</strong> The signal is using an external trigger only for minor movements.</li>
+<li><strong>unknown.</strong> The current operating mode is not known.</li>
+</ul>
+<h3 id="3723-enumeration-of-roadsideunitmessagetypes">3.7.23 Enumeration of RoadsideUnitMessageTypes<a class="headerlink" href="#3723-enumeration-of-roadsideunitmessagetypes" title="Permanent link">¶</a></h3>
+<p>The RoadsideUnitMessageTypes Enumerated Type describes the message types being broadcast by a RoadsideUnit.</p>
+<p>The following identifies the enumerations for RoadsideUnitMessageTypes:</p>
+<ul>
+<li><strong>rsm.</strong> The RSU is broadcasting RSM messages.</li>
+<li><strong>tim.</strong> The RSU is broadcasting TIM messages.</li>
+<li><strong>spat.</strong> The RSU is broadcasting SPaT messages.</li>
+<li><strong>map.</strong> The RSU is broadcasting MAP messages.</li>
+<li><strong>other.</strong> The RSU is broadcasting messages other than the options listed.</li>
+</ul>
+<h2 id="38-direction-requirements">3.8 Direction Requirements<a class="headerlink" href="#38-direction-requirements" title="Permanent link">¶</a></h2>
+<p>The Direction includes the following data definition.</p>
+<h3 id="381-enumeration-of-direction">3.8.1 Enumeration of Direction<a class="headerlink" href="#381-enumeration-of-direction" title="Permanent link">¶</a></h3>
+<p>The Direction Enumerated Type describes the direction of a roadway. The values are based on the standard naming for U.S. roadways and indicate the direction of the traffic flow regardless of the real heading angle of the roadway.</p>
+<p>The following identifies the enumerations for Direction:</p>
+<ul>
+<li><strong>northbound.</strong> Road flow is in the northbound direction</li>
+<li><strong>eastbound.</strong> Road flow is in the eastbound direction</li>
+<li><strong>southbound.</strong> Road flow is in the southbound direction</li>
+<li><strong>westbound.</strong> Road flow is in the westbound direction</li>
+<li><strong>inner-loop.</strong> Road flow is on the inner loop of a ring road or beltway. In countries that drive on the right side of the road, this is the clockwise direction.</li>
+<li><strong>outer-loop.</strong> Road flow is on the outer loop of a ring road or beltway. In countries that drive on the right side of the road, this is the counterclockwise direction.</li>
+<li><strong>undefined.</strong> Road flow does not have a signed direction. For a RoadEventFeature, the first and last coordinates in the feature's geometry represent the beginning and end of the road event in the direction of travel it impacts.</li>
+<li><strong>unknown.</strong> Road flow may have a signed direction, but the affected direction of travel is not known</li>
+</ul>
+<p><strong>Additional Information</strong></p>
+<p>The 'Direction' enumerated type values were based on the TMDD Link-alignment Enumeration, which contains the following values:</p>
+<ul>
+<li>northbound (1)</li>
+<li>eastbound (2)</li>
+<li>southbound (3)</li>
+<li>westbound (4)</li>
+<li>inner-loop (5)</li>
+<li>outer-loop (6)</li>
+</ul>
+<h3 id="382-reserved-for-future-requirements">3.8.2 Reserved for Future Requirements<a class="headerlink" href="#382-reserved-for-future-requirements" title="Permanent link">¶</a></h3>
+<p>Reserved for future use.</p>
+<h2 id="39-boundingbox-requirements">3.9 BoundingBox Requirements<a class="headerlink" href="#39-boundingbox-requirements" title="Permanent link">¶</a></h2>
+<p>The BoundingBox includes the following data definition.</p>
+<h3 id="391-contents-of-boundingbox">3.9.1 Contents of BoundingBox<a class="headerlink" href="#391-contents-of-boundingbox" title="Permanent link">¶</a></h3>
+<p>See RFC 7946 Section 5.</p>
+<h3 id="392-reserved-for-future-requirements">3.9.2 Reserved for Future Requirements<a class="headerlink" href="#392-reserved-for-future-requirements" title="Permanent link">¶</a></h3>
+<p>Reserved for future use.</p>
+<h2 id="310-instructions-for-using-the-protocol-requirements-list-prl">3.10 Instructions for Using the Protocol Requirements List (PRL)<a class="headerlink" href="#310-instructions-for-using-the-protocol-requirements-list-prl" title="Permanent link">¶</a></h2>
+<p>The Protocol Requirements List (PRL) is contained in Annex A Protocol Requirements List. </p>
+<p>The PRL described in this document maps the needs identified in Section 2 to the requirements defined in Section 3. The PRL can be used by the following:</p>
+<ul>
+<li>A user or specification writer to indicate which requirements are to be implemented in a project-specific deployment.</li>
+<li>The device manufacturer and user, as a detailed indication of the capabilities of the implementation.</li>
+<li>A user, as a basis for initially checking the potential interoperability with another implementation.</li>
+<li>A tester, as a checklist to compare against a specification and provide basis for test planning.</li>
+</ul>
+<h3 id="3101-notation-informative">3.10.1 Notation [Informative]<a class="headerlink" href="#3101-notation-informative" title="Permanent link">¶</a></h3>
+<p>The following notations and symbols are used to indicate status and conditional status in the PRL. Not all of these notations and symbols may be used within this implementation guide.</p>
+<h4 id="31011-conformance-symbols">3.10.1.1 Conformance Symbols<a class="headerlink" href="#31011-conformance-symbols" title="Permanent link">¶</a></h4>
+<p>The symbols in Table 2 are used to indicate status under the Conformance column in the PRL.</p>
+<p>Table 2. Conformance Symbols</p>
+<table>
+<thead>
+<tr>
+<th><strong>Symbol</strong></th>
+<th><strong>Status</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td>M.#</td>
+<td>Support of every item of the group labeled by the same numeral # is required, but only one is active at a time</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>O.# (range)</td>
+<td>Part of an option group. Support of the number of items indicated by the '(range)' is required from all options labeled with the same numeral #</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Conditional</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>Not-applicable (i.e., logically impossible in the scope of the standard)</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Excluded or prohibited</td>
+</tr>
+</tbody>
+</table>
+<p>The O.# (range) notation is used to show a set of selectable options. For example, O.2 (1..*) would indicate that one or more options from option group 2 must be implemented. Two-character combinations are used for dynamic requirements. In this context, the first character refers to the static (implementation) status, and the second refers to the dynamic (use); thus, "MO" means the requirement is "mandatory to implement, but optional to use."</p>
+<h4 id="31012-conditional-status-notation">3.10.1.2 Conditional Status Notation<a class="headerlink" href="#31012-conditional-status-notation" title="Permanent link">¶</a></h4>
+<p>The predicate notations in Table 3 may be used.</p>
+<p>Table 3. Conditional Status Notation</p>
+<table>
+<thead>
+<tr>
+<th><strong>Predicate</strong></th>
+<th><strong>Notation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;predicate&gt;:</td>
+<td>This notation introduces a single item that is conditional on the &lt;predicate&gt;.</td>
+</tr>
+<tr>
+<td>&lt;predicate&gt;::</td>
+<td>This notation introduces a table or a group of tables, all of which are conditional on the &lt;predicate&gt;.</td>
+</tr>
+<tr>
+<td>(predicate)</td>
+<td>This notation introduces the first occurrence of the predicate. The feature associated with this notation is the base feature for all options that have this predicate in their conformance column.</td>
+</tr>
+</tbody>
+</table>
+<p>The &lt;predicate&gt;: notation means that the status following it applies only when the PRL states that the feature or features identified by the predicate are supported. In the simplest case, &lt;predicate&gt; is the identifying tag of a single PRL item. The &lt;predicate&gt; notation may also precede a table or group of tables in a section or subsection. When the group predicate is true then the associated section shall be completed. The symbol &lt;predicate&gt; can also represent a Boolean expression composed of several indices. "AND," "OR," and "NOT" shall be used to indicate the Boolean logical operations.</p>
+<p>The predicates used in this standard map to the sections indicated in Table 4.</p>
+<p>Table 4. Predicate Mapping</p>
+<table>
+<thead>
+<tr>
+<th><strong>Predicate</strong></th>
+<th><strong>Section</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RefPost</td>
+<td>Mandatory if reference_post is selected:<br/><br/>3.6.2 f)<br/><br/>3.6.3 f)3.7.3 n)</td>
+</tr>
+<tr>
+<td>WorkerMethod</td>
+<td>Mandatory if value is selected:<br/><br/>3.6.11 b)</td>
+</tr>
+<tr>
+<td>ResValue</td>
+<td>Mandatory if value is selected:<br/><br/>3.6.9 c)</td>
+</tr>
+<tr>
+<td>ImgURL</td>
+<td>Mandatory if image_url is selected.<br/><br/>3.7.5 c)</td>
+</tr>
+<tr>
+<td>VideoURL</td>
+<td>Mandatory if video_url is selected.<br/><br/>3.7.5 e)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="31013-support-column-symbols">3.10.1.3 Support Column Symbols<a class="headerlink" href="#31013-support-column-symbols" title="Permanent link">¶</a></h4>
+<p>The Support column in the PRL can be used by a procurement specification to identify the required features for the given procurement or by an implementer to identify which features have been implemented. In either case, the user circles the appropriate answer (Yes, No, or N/A) in the support column. When a user circles YES for an optional requirement, the requirement becomes mandatory for the procurement specification.</p>
+<p>Table 5. Support Column Entries</p>
+<table>
+<thead>
+<tr>
+<th><strong>Entry</strong></th>
+<th><strong>Identifier</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yes</td>
+<td>Supported by the implementation</td>
+</tr>
+<tr>
+<td>No</td>
+<td>Not supported by the implementation</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3102-instructions-for-completing-the-prl-informative">3.10.2 Instructions for Completing the PRL [Informative]<a class="headerlink" href="#3102-instructions-for-completing-the-prl-informative" title="Permanent link">¶</a></h3>
+<p>In the 'Support' column, each response shall be selected either from the indicated set of responses (for example: Yes / No / NA), or it shall reference additional items that are to be attached (for example, a list of traffic signal controllers to be supported by an implementation). If a conditional requirement is inapplicable, use the Not Applicable (N/A) choice.</p>
+<p>NOTE: A specification can allow for flexibility in a deliverable by leaving the selection in the Support column blank for a given row.</p>
+<h4 id="31021-conformance-definition">3.10.2.1 Conformance Definition<a class="headerlink" href="#31021-conformance-definition" title="Permanent link">¶</a></h4>
+<p>To claim "Conformance" to this standard and guide, deployers must fulfill at least the mandatory requirements identified in the PRL.</p>
+<p>NOTE: The reader and user of this standard and guide is advised that 'conformance' should not be confused with 'compliance' to a specification. The CWZ Standard and Implementation Guide is as broad as possible to allow a very simple CWZ deployment to be 'conformant.' For agency use, the specification writer should match project-specific requirements with the corresponding standardized requirements in this standard and guide to achieve interoperability. This means that requirements defined as 'optional' in the PRL might need to be made mandatory for specific project needs.</p>
+<p>NOTE: Off-the-shelf interoperability and interchangeability can only be achieved through well-documented features broadly supported by the industry as a whole. Designing a system that uses features not defined in a standard or not typically deployed in combination with one another inhibits the goals of interoperability and interchangeability, especially if the documentation of these features is not available for system integrators. Standards allow the use of additional features to support innovation, which is constantly needed within the industry; but users should be aware of the risks of incorporating such features.</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 14:27:10 UTC">September 23, 2026</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a href="https://github.com/ite-org/cwz" property="dct:title" rel="cc:attributionURL">Connected Work Zones Implementation Guide and Standard</a> by <span property="cc:attributionName">AASHTO-ITE-NEMA</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0<img alt="" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img alt="" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.status", "content.tooltips", "icons", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../javascripts/tablesort.js"></script>
+</body>
+</html>
